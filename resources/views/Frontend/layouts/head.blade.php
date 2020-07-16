@@ -10,7 +10,7 @@
     
      <link rel="stylesheet" href="{{ secure_asset('public/backend/bower_components/font-awesome/css/font-awesome.min.css') }}">
    
-    <link rel="stylesheet" href="{{ secure_asset('public/frontend/secure_assets/css/style-freedom.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('public/frontend/assets/css/style-freedom.css') }}">
 
 <script src="{{ secure_asset('public/backend/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
