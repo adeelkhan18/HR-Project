@@ -89,7 +89,7 @@
 
 
 <!-- =================Statistics start ========================-->
-<script src="{{ asset('public/backend/Chart.bundle.js') }}"></script>
+<script src="{{ secure_asset('public/backend/Chart.bundle.js') }}"></script>
 <?php
 $notics= \App\Notice::all();
 $holidays= \App\Holiday::all();

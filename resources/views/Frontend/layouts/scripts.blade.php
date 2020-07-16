@@ -1,7 +1,7 @@
 <!-- Bootstrap 3.3.7 -->
-<script src="{{ asset('public/backend/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ secure_asset('public/backend/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- Select2 -->
-<script src="{{ asset('public/frontend/assets/js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ secure_asset('public/frontend/assets/js/jquery-3.3.1.min.js') }}"></script>
 <script>
 		// When the user scrolls down 20px from the top of the document, show the button
 		window.onscroll = function () {
