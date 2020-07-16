@@ -20,7 +20,7 @@
 					
 				</div>
 				<div class="footer-left">
-					<p>© 2019-2020 Centangle Interactive Pvt Ltd. All rights reserved |Made with ❤️ in Pakistan
+					<p>© 2020 Centangle Interactive Pvt Ltd. All rights reserved |Made with ❤️ in Pakistan
 					</p>
 				</div>
 			</div>
