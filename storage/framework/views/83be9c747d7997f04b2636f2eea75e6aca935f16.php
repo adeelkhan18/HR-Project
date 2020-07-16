@@ -23,7 +23,7 @@
 			<div class="wrapper">
 				<div class="d-grid">
 					<div class="grids5-info">
-						<a href="blog-single.html"><img src="<?php echo asset('homepage/images/blog1.jpg'); ?>" alt="" /></a>
+						<a href="blog-single.html"><img src="<?php echo secure_asset('public/frontend/assets/images/blog1.jpg'); ?>" alt="" /></a>
 						<div class="blog-info">
 							
 							<h4><a href="blog-single.html">Software</a></h4>
@@ -31,7 +31,7 @@
 						</div>
 					</div>
 					<div class="grids5-info">
-						<a href="blog-single.html"><img src="<?php echo asset('homepage/images/blog2.jpg'); ?>" alt="" /></a>
+						<a href="blog-single.html"><img src="<?php echo asset('public/frontend/assets/images/blog2.jpg'); ?>" alt="" /></a>
 						<div class="blog-info">
 						
 							<h4><a href="blog-single.html">Web</a></h4>
@@ -39,7 +39,7 @@
 						</div>
 					</div>
 					<div class="grids5-info">
-						<a href="blog-single.html"><img src="<?php echo asset('homepage/images/blog3.jpg'); ?>" alt="" /></a>
+						<a href="blog-single.html"><img src="<?php echo asset('public/frontend/assets/images/blog3.jpg'); ?>" alt="" /></a>
 						<div class="blog-info">
 							
 							<h4><a href="blog-single.html">Digital</a></h4>
@@ -102,7 +102,7 @@
 			y.classList.toggle("hide");
 		})
 	</script>
-	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="<?php echo secure_asset('public/frontend/assets/js/jquery-3.3.1.min.js'); ?>"></script>
 
 	
 	<!-- //w3l-content-photo-5 -->

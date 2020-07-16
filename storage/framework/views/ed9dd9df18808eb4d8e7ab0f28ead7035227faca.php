@@ -6,13 +6,13 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="<?php echo csrf_token(); ?>">
     <!-- Bootstrap 3.3.7 -->
-     <link rel="stylesheet" href="<?php echo asset('public/backend/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
+     <link rel="stylesheet" href="<?php echo secure_asset('public/backend/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
     
-     <link rel="stylesheet" href="<?php echo asset('public/backend/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
+     <link rel="stylesheet" href="<?php echo secure_asset('public/backend/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
    
-    <link rel="stylesheet" href="<?php echo asset('public/frontend/assets/css/style-freedom.css'); ?>">
+    <link rel="stylesheet" href="<?php echo secure_asset('public/frontend/assets/css/style-freedom.css'); ?>">
 
-<script src="<?php echo asset('public/backend/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
+<script src="<?php echo secure_asset('public/backend/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
 
 
 </head>
