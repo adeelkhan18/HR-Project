@@ -5,7 +5,7 @@
 <div class="row">
   <div class="column">
    
-  <img src="{{ asset('public/profile_picture/'.auth()->user()->avatar) }}" class="img"><br><br><br>
+  <img src="{{ secure_asset('public/profile_picture/'.auth()->user()->avatar) }}" class="img"><br><br><br>
    
 
                <?php $users= \App\User::all()->where('employee_id', $empid);

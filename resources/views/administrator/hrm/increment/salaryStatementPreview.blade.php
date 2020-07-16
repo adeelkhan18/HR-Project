@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="{{ asset('public/backend/mystyle.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('public/backend/mystyle.css') }}">
 <div class="content-wrapper">
   
     <!-- Main content -->
@@ -43,7 +43,7 @@
                     </h4>
                 </div>
                 <div class="st-center-body">
-                    <div class="img-body"><img src="{{ asset('public/profile_picture/'.auth()->user()->avatar) }}" class="img"></div>
+                    <div class="img-body"><img src="{{ secure_asset('public/profile_picture/'.auth()->user()->avatar) }}" class="img"></div>
                     <h2>{{ __('Salary Statement') }}</h2>
                     <center><b>{{ date("F Y", strtotime($startdate)) }} to {{ date("F Y", strtotime($enddate)) }}<br>
                     <?php $users= \App\User::all()->where('employee_id', $empid);

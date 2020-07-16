@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="{{ asset('public/profile_picture/'.auth()->user()->avatar) }}" class="img"><br><br><br>
+        <img src="{{ secure_asset('public/profile_picture/'.auth()->user()->avatar) }}" class="img"><br><br><br>
     </div>
     <div class="footer"><p>{{ __('Page:') }} <span class="pagenum"></span></p></div>
     <div class="container table-responsive">
