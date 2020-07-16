@@ -22,13 +22,15 @@ SET time_zone = "+00:00";
 -- Database: `dbhrms`
 --
 
+use powerhr;
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `appliedcadidtes`
 --
 
-CREATE TABLE `appliedcadidtes` (
+CREATE TABLE IF NOT EXISTS `appliedcadidtes` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `jobid` int(100) DEFAULT NULL,
@@ -56,7 +58,7 @@ INSERT INTO `appliedcadidtes` (`id`, `name`, `jobid`, `email`, `phone`, `cv`, `a
 -- Table structure for table `attendances`
 --
 
-CREATE TABLE `attendances` (
+CREATE TABLE IF NOT EXISTS `attendances` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -155,7 +157,7 @@ INSERT INTO `attendances` (`id`, `created_by`, `user_id`, `attendance_date`, `at
 -- Table structure for table `award_categories`
 --
 
-CREATE TABLE `award_categories` (
+CREATE TABLE IF NOT EXISTS `award_categories` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `award_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -178,7 +180,7 @@ INSERT INTO `award_categories` (`id`, `created_by`, `award_title`, `publication_
 -- Table structure for table `bonuses`
 --
 
-CREATE TABLE `bonuses` (
+CREATE TABLE IF NOT EXISTS `bonuses` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -208,7 +210,7 @@ INSERT INTO `bonuses` (`id`, `created_by`, `user_id`, `bonus_name`, `bonus_month
 -- Table structure for table `client_types`
 --
 
-CREATE TABLE `client_types` (
+CREATE TABLE IF NOT EXISTS `client_types` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `client_type` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -243,7 +245,7 @@ INSERT INTO `client_types` (`id`, `created_by`, `client_type`, `client_type_desc
 -- Table structure for table `deductions`
 --
 
-CREATE TABLE `deductions` (
+CREATE TABLE IF NOT EXISTS `deductions` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -271,7 +273,7 @@ INSERT INTO `deductions` (`id`, `created_by`, `user_id`, `deduction_name`, `dedu
 -- Table structure for table `departments`
 --
 
-CREATE TABLE `departments` (
+CREATE TABLE IF NOT EXISTS `departments` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `department` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -301,7 +303,7 @@ INSERT INTO `departments` (`id`, `created_by`, `department`, `department_descrip
 -- Table structure for table `designations`
 --
 
-CREATE TABLE `designations` (
+CREATE TABLE IF NOT EXISTS `designations` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `department_id` int(11) NOT NULL,
@@ -337,7 +339,7 @@ INSERT INTO `designations` (`id`, `created_by`, `department_id`, `designation`, 
 -- Table structure for table `employee_awards`
 --
 
-CREATE TABLE `employee_awards` (
+CREATE TABLE IF NOT EXISTS `employee_awards` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `employee_id` int(11) NOT NULL,
@@ -364,7 +366,7 @@ INSERT INTO `employee_awards` (`id`, `created_by`, `employee_id`, `award_categor
 -- Table structure for table `expence_managements`
 --
 
-CREATE TABLE `expence_managements` (
+CREATE TABLE IF NOT EXISTS `expence_managements` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `employee_id` int(11) NOT NULL,
@@ -393,7 +395,7 @@ INSERT INTO `expence_managements` (`id`, `created_by`, `employee_id`, `item_name
 -- Table structure for table `exp_purposes`
 --
 
-CREATE TABLE `exp_purposes` (
+CREATE TABLE IF NOT EXISTS `exp_purposes` (
   `id` int(11) NOT NULL,
   `exp_name` varchar(255) DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
@@ -415,7 +417,7 @@ INSERT INTO `exp_purposes` (`id`, `exp_name`, `created_by`, `created_at`, `updat
 -- Table structure for table `files`
 --
 
-CREATE TABLE `files` (
+CREATE TABLE IF NOT EXISTS `files` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `folder_id` int(11) NOT NULL,
@@ -440,7 +442,7 @@ INSERT INTO `files` (`id`, `created_by`, `folder_id`, `caption`, `file_name`, `p
 -- Table structure for table `folders`
 --
 
-CREATE TABLE `folders` (
+CREATE TABLE IF NOT EXISTS `folders` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `folder_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -464,7 +466,7 @@ INSERT INTO `folders` (`id`, `created_by`, `folder_name`, `folder_description`, 
 -- Table structure for table `general_settings`
 --
 
-CREATE TABLE `general_settings` (
+CREATE TABLE IF NOT EXISTS `general_settings` (
   `id` int(10) UNSIGNED NOT NULL,
   `updated_by` int(11) NOT NULL,
   `company_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -484,7 +486,7 @@ CREATE TABLE `general_settings` (
 -- Table structure for table `holidays`
 --
 
-CREATE TABLE `holidays` (
+CREATE TABLE IF NOT EXISTS `holidays` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `holiday_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -509,7 +511,7 @@ INSERT INTO `holidays` (`id`, `created_by`, `holiday_name`, `date`, `description
 -- Table structure for table `increments`
 --
 
-CREATE TABLE `increments` (
+CREATE TABLE IF NOT EXISTS `increments` (
   `id` int(11) NOT NULL,
   `created_by` int(11) DEFAULT NULL,
   `amount` double DEFAULT NULL,
@@ -547,7 +549,7 @@ INSERT INTO `increments` (`id`, `created_by`, `amount`, `emp_id`, `date`, `incr_
 -- Table structure for table `jobs`
 --
 
-CREATE TABLE `jobs` (
+CREATE TABLE IF NOT EXISTS `jobs` (
   `id` int(11) NOT NULL,
   `title` varchar(100) DEFAULT NULL,
   `Location` text DEFAULT NULL,
@@ -581,7 +583,7 @@ INSERT INTO `jobs` (`id`, `title`, `Location`, `JobType`, `Category`, `WorkShift
 -- Table structure for table `leave_applications`
 --
 
-CREATE TABLE `leave_applications` (
+CREATE TABLE IF NOT EXISTS `leave_applications` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `leave_category_id` int(11) NOT NULL,
@@ -612,7 +614,7 @@ INSERT INTO `leave_applications` (`id`, `created_by`, `leave_category_id`, `last
 -- Table structure for table `leave_categories`
 --
 
-CREATE TABLE `leave_categories` (
+CREATE TABLE IF NOT EXISTS `leave_categories` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `leave_category` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -638,7 +640,7 @@ INSERT INTO `leave_categories` (`id`, `created_by`, `leave_category`, `leave_cat
 -- Table structure for table `loans`
 --
 
-CREATE TABLE `loans` (
+CREATE TABLE IF NOT EXISTS `loans` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -668,7 +670,7 @@ INSERT INTO `loans` (`id`, `created_by`, `user_id`, `loan_name`, `loan_amount`, 
 -- Table structure for table `migrations`
 --
 
-CREATE TABLE `migrations` (
+CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
@@ -711,7 +713,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Table structure for table `notices`
 --
 
-CREATE TABLE `notices` (
+CREATE TABLE IF NOT EXISTS `notices` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `notice_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -737,7 +739,7 @@ INSERT INTO `notices` (`id`, `created_by`, `notice_title`, `description`, `publi
 -- Table structure for table `password_resets`
 --
 
-CREATE TABLE `password_resets` (
+CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
@@ -749,7 +751,7 @@ CREATE TABLE `password_resets` (
 -- Table structure for table `payrolls`
 --
 
-CREATE TABLE `payrolls` (
+CREATE TABLE IF NOT EXISTS `payrolls` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -785,7 +787,7 @@ INSERT INTO `payrolls` (`id`, `created_by`, `user_id`, `employee_type`, `basic_s
 -- Table structure for table `permissions`
 --
 
-CREATE TABLE `permissions` (
+CREATE TABLE IF NOT EXISTS `permissions` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `display_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -836,7 +838,7 @@ INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `created
 -- Table structure for table `permission_role`
 --
 
-CREATE TABLE `permission_role` (
+CREATE TABLE IF NOT EXISTS `permission_role` (
   `permission_id` int(10) UNSIGNED NOT NULL,
   `role_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -886,7 +888,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 -- Table structure for table `personal_events`
 --
 
-CREATE TABLE `personal_events` (
+CREATE TABLE IF NOT EXISTS `personal_events` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `personal_event` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -912,7 +914,7 @@ INSERT INTO `personal_events` (`id`, `created_by`, `personal_event`, `personal_e
 -- Table structure for table `roles`
 --
 
-CREATE TABLE `roles` (
+CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `display_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -935,7 +937,7 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, 
 -- Table structure for table `role_user`
 --
 
-CREATE TABLE `role_user` (
+CREATE TABLE IF NOT EXISTS `role_user` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `role_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -960,7 +962,7 @@ INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
 -- Table structure for table `salary_payments`
 --
 
-CREATE TABLE `salary_payments` (
+CREATE TABLE IF NOT EXISTS `salary_payments` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -1003,7 +1005,7 @@ INSERT INTO `salary_payments` (`id`, `created_by`, `user_id`, `gross_salary`, `t
 -- Table structure for table `salary_payment_details`
 --
 
-CREATE TABLE `salary_payment_details` (
+CREATE TABLE IF NOT EXISTS `salary_payment_details` (
   `id` int(10) UNSIGNED NOT NULL,
   `salary_payment_id` int(10) UNSIGNED NOT NULL,
   `item_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1149,7 +1151,7 @@ INSERT INTO `salary_payment_details` (`id`, `salary_payment_id`, `item_name`, `a
 -- Table structure for table `set_times`
 --
 
-CREATE TABLE `set_times` (
+CREATE TABLE IF NOT EXISTS `set_times` (
   `id` int(11) NOT NULL,
   `created_by` int(11) DEFAULT NULL,
   `in_time` time DEFAULT NULL,
@@ -1171,7 +1173,7 @@ INSERT INTO `set_times` (`id`, `created_by`, `in_time`, `out_time`, `created_at`
 -- Table structure for table `tasks`
 --
 
-CREATE TABLE `tasks` (
+CREATE TABLE IF NOT EXISTS `tasks` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `task_end_date` varchar(200) DEFAULT NULL,
@@ -1197,7 +1199,7 @@ INSERT INTO `tasks` (`id`, `user_id`, `task_end_date`, `task_detail`, `task_stat
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_by` int(11) DEFAULT NULL,
   `employee_id` int(11) DEFAULT NULL,
@@ -1263,7 +1265,7 @@ INSERT INTO `users` (`id`, `created_by`, `employee_id`, `name`, `father_name`, `
 -- Table structure for table `working_days`
 --
 
-CREATE TABLE `working_days` (
+CREATE TABLE IF NOT EXISTS `working_days` (
   `id` int(10) UNSIGNED NOT NULL,
   `updated_by` int(11) NOT NULL,
   `day` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
