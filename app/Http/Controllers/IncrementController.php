@@ -69,15 +69,16 @@ class IncrementController extends Controller
 
 
      public function incrementList(){
-
+     	
      	$increments= Increment::all()->where('created_by', Auth::user()->id);
+     	
 
     	return view('administrator.hrm.increment.incrementList', compact('increments'));
 
     }
 
     public function salaryStatementSearch(){
-    	$employees = SalaryPayment::all();
+    	$employees = SalaryPayment::all()->where('deletion_status',0);
 
           return view('administrator.hrm.increment.salaryStatementSearch', compact('employees'));
 

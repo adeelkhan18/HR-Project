@@ -13,7 +13,8 @@ class FileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($id)
-    {
+    { 
+        $id=1;
         $files = DB::table('files')
         ->join('users', 'files.created_by', '=', 'users.id')
         ->join('folders', 'files.folder_id', '=', 'folders.id')

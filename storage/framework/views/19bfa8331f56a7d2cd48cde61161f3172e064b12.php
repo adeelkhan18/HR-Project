@@ -2,7 +2,13 @@
     <ul class="sidebar-menu" data-widget="tree">
         <li><a href="<?php echo url('/dashboard'); ?>"><i class="fa fa-dashboard text-purple"></i> <span><?php echo __('Dashboard'); ?></span></a></li>
         
+           <li><a href="<?php echo url('/files/1'); ?>"><i class="fa fa-folder"></i><?php echo __(' Files'); ?></a></li>
         <?php if (\Entrust::can('people')) : ?>
+        <?php if (\Entrust::can('manage-employee')) : ?>
+             
+               
+                <?php endif; // Entrust::can ?>
+
         <li class="treeview">
             <a href="#">
                 <i class="fa fa-users text-purple"></i> <span><?php echo __('Employee Management'); ?></span>
@@ -16,9 +22,17 @@
                 <li><a href="<?php echo url('/people/employees/create'); ?>"><i class="fa fa-circle-o"></i><?php echo __(' New Employee'); ?></a></li>
                 <li><a href="<?php echo url('/people/employees'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('Manage Employee'); ?></a></li>
                 <?php endif; // Entrust::can ?>
+                <?php if (\Entrust::can('manage-employee')) : ?>
+                <li><a href="<?php echo url('/setting/designations'); ?>"><i class="fa fa-circle-o"></i><?php echo __(' Designations'); ?></a></li>
+                
+                <?php endif; // Entrust::can ?>
+
                 <?php if (\Entrust::can('manage-clients')) : ?>
                  <li><a href="<?php echo url('people/clients/create'); ?>"><i class="fa fa-circle-o"></i><?php echo __(' New Customer'); ?></a></li>
                 <li><a href="<?php echo url('/people/clients'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('Manage Clients'); ?></a></li>
+                <li><a href="<?php echo url('/setting/client-types'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('Manage Client Type'); ?></a></li>
+                <li><a href="<?php echo url('/setting/departments'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('Manage Departments'); ?></a></li>
+
                 <?php endif; // Entrust::can ?>
                 <?php if (\Entrust::can('manage-references')) : ?>
                 
@@ -69,6 +83,7 @@
             </ul>
         </li>
         <?php endif; // Entrust::can ?>
+                
         <?php if (\Entrust::can('attendance-management')) : ?>
         <li class="treeview">
             <a href="#">
@@ -79,10 +94,13 @@
             </a>
             <ul class="treeview-menu">
                 <?php if (\Entrust::can('manage-attendance')) : ?>
+                 <li><a href="<?php echo url('setting/working-days'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Set Working days'); ?> </a></li>
+                 <li><a href="<?php echo url('setting/holidays'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Set Holidays'); ?> </a></li>
                 <li><a href="<?php echo url('/hrm/attendance/manage'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Manage Attendance'); ?> </a></li>
 
 
                 <?php endif; // Entrust::can ?>
+
                 <?php if (\Entrust::can('attendance-report')) : ?>
                 <li><a href="<?php echo url('/hrm/attendance/details/report/go'); ?>"><i class="fa fa-circle-o"></i><?php echo __(' Attendance Statement'); ?></a></li>
                 <li><a href="<?php echo url('/hrm/attendance/report'); ?>"><i class="fa fa-circle-o"></i><?php echo __(' Attendance Report'); ?></a></li>
@@ -135,6 +153,7 @@
                 <?php if (\Entrust::can('manage-notice')) : ?>
                  <li><a href="<?php echo url('hrm/notice/create'); ?>"><i class="fa fa-circle-o"></i><?php echo __('New Notice'); ?></a></li>
                 <li><a href="<?php echo url('/hrm/notice'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Manage Notice'); ?></a></li>
+                  <li><a href="<?php echo url('/setting/personal-events'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Add Personal Event'); ?></a></li>
                 <?php endif; // Entrust::can ?>
                 <?php if (\Entrust::can('notice-board')) : ?>
                 <li><a href="<?php echo url('/hrm/notice/show'); ?>"><i class="fa fa-circle-o"></i> <span><?php echo __('Notice list'); ?></span></a></li>
@@ -168,6 +187,7 @@
 
             </ul>
         </li>
+        <?php endif; ?>
         <li class="treeview">
             <a href="#">
                 <i class="fa fa-users text-purple"></i> <span><?php echo __('Task Management'); ?></span>
@@ -176,30 +196,51 @@
                 </span>
             </a>
             <ul class="treeview-menu">
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin')): ?>
                 <li><a href="<?php echo route('tcreat'); ?>"><i class="fa fa-circle-o"></i><?php echo __(' New Task'); ?></a></li>
+                <?php endif; ?>
+                 <?php if(Auth::user()->role ==1): ?>
                 <li><a href="<?php echo route('tall'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('All Tasks'); ?></a></li>
+                <?php else: ?>
+                <li><a href="<?php echo route('taskall'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('All Tasks'); ?></a></li>
+                <?php endif; ?>
+
+                 <li><a href="<?php echo route('performance'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('Performance'); ?></a></li>
                
 
             </ul>
         </li>
-        <?php endif; ?>
-        <?php if(Auth::user()->access_label !=1): ?>
-            <li class="treeview">
+        
+       
+        
+          <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-users text-purple"></i> <span><?php echo __('Task Management'); ?></span>
+                    <i class="fa fa-trophy"></i> <span><?php echo __('Awards'); ?></span>
                     <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
                 </a>
+               
+              
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo route('taskall'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('All Task'); ?></a></li>
+                     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin')): ?>
+                    <li><a href="<?php echo url('setting/award_categories'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('Award Categories'); ?></a></li>
+                      <?php endif; ?>
 
+                    <li><a href="<?php echo url('hrm/employee-awards'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('Employee Awards'); ?></a></li>
 
                 </ul>
+                
+                    
+
+              
+              
             </li>
-        <?php endif; ?>
+        
         <li><a href="<?php echo url('/profile/user-profile'); ?>"><i class="fa fa-user text-purple"></i> <span><?php echo __('Profile'); ?></span></a></li>
+
         <li><a href="<?php echo url('/profile/change-password'); ?>"><i class="fa fa-key text-purple"></i> <span><?php echo __('Change Password'); ?></span></a></li>
+        
         <li>
             <a href="<?php echo route('logout'); ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-lock text-purple"></i> <span><?php echo __('Logout'); ?></span></a>
             <form id="logout-form" action="<?php echo route('logout'); ?>" method="POST">

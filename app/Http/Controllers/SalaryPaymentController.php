@@ -26,6 +26,7 @@ class SalaryPaymentController extends Controller {
 		->orderBy('users.name', 'ASC')
 		->where('users.access_label', '>=', 2)
 		->where('users.access_label', '<=', 3)
+		->where('users.deletion_status',0)
 		->get(['designations.designation', 'users.name', 'users.id'])
 		->toArray();
 
@@ -218,11 +219,11 @@ class SalaryPaymentController extends Controller {
 				]);
 			}
 
-			for ($i = 0; $i < count($request->loan_id); $i++) {
-				$loan = Loan::find($request->loan_id[$i]);
-				$loan->remaining_installments = $request->remaining_installments[$i] - 1;
-				$loan->save();
-			} //Old code
+			//for ($i = 0; $i < count($request->loan_id); $i++) {
+			//	$loan = Loan::find($request->loan_id[$i]);
+			//	$loan->remaining_installments = $request->remaining_installments[$i] - 1;
+			//	$loan->save();
+			//} //Old code
 
 			
 
@@ -274,6 +275,7 @@ class SalaryPaymentController extends Controller {
 		->orderBy('users.name', 'ASC')
 		->where('users.access_label', '>=', 2)
 		->where('users.access_label', '<=', 3)
+		->where('users.deletion_status',0)
 		->get(['payrolls.*', 'designations.designation', 'users.name', 'users.id as user_id'])
 		->toArray();
 
@@ -314,6 +316,7 @@ class SalaryPaymentController extends Controller {
 		->orderBy('users.name', 'ASC')
 		->where('users.access_label', '>=', 2)
 		->where('users.access_label', '<=', 3)
+		->where('users.deletion_status', 0)
 		->get(['designations.designation', 'users.name', 'users.id', 'users.created_at', 'users.employee_id', 'payrolls.provident_fund_contribution', 'payrolls.provident_fund_deduction'])
 		->toArray();
 

@@ -35,6 +35,7 @@
            
             <hr>
             <div id="printable_area" class="table-responsive">
+               <div id="printable_area" class="col-md-12 table-responsive">
               <table class="table table-bordered">
                 <tr>
                   <td>
@@ -109,6 +110,7 @@
                   <td><strong>{{ number_format($salary_payment->provident_fund, 2, '.', '') }}</strong></td>
                 </tr>
               </table>
+            </div>
             </div>
           </div>
           <!-- /.box-body -->

@@ -91,6 +91,12 @@
           <div class="box-header with-border">
             <h3 class="box-title"><?php echo __('Employee Details'); ?></h3>
           </div>
+          <div  class="col-md-3">
+                <button type="button" class="tip btn btn-primary btn-flat" title="Print" data-original-title="Label Printer" onclick="printDiv('printable_area')">
+                    <i class="fa fa-print"></i>
+                    <span class="hidden-sm hidden-xs"> <?php echo __('Print'); ?></span>
+                </button>
+            </div>
           <div class="box-body">
             <!-- Notification Box -->
             <div class="col-md-12">

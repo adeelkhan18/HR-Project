@@ -83,8 +83,9 @@
                             <td><?php echo $employee['contact_no_one']; ?></td>
                             <td class="text-center"><?php echo date("d F Y", strtotime($employee['created_at'])); ?></td>
                            
-                            <td class="text-center">
+                             <td class="text-center">
                                <a href="<?php echo url('/people/employees/edit/' . $employee['id']); ?>"><i class="icon fa fa-edit"></i> <?php echo __('Edit'); ?></a>
+                               <a href="<?php echo url('/people/employees/delete/' . $employee['id']); ?>"><i class="icon fa fa-trash"></i> <?php echo __('delete'); ?></a>
                             </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

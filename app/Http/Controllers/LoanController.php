@@ -19,6 +19,7 @@ class LoanController extends Controller
         ->leftjoin('designations','users.designation_id', '=', 'designations.id')
         ->orderBy('loans.id', 'DESC')
         ->where('loans.deletion_status', 0)
+        ->where('users.deletion_status', 0)
         ->get([
             'loans.*',
             'users.name',

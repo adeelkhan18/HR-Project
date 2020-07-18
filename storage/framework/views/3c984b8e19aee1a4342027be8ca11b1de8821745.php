@@ -85,7 +85,7 @@
 
 
 
-
+<?php endif; ?>
 
 
 <!-- =================Statistics start ========================-->
@@ -94,6 +94,7 @@
 $notics= \App\Notice::all();
 $holidays= \App\Holiday::all();
 $files= \App\File::all();
+
 
 $personalevents= \App\PersonalEvent::all();
 
@@ -108,7 +109,7 @@ $personalevents= \App\PersonalEvent::all();
 </div>
 
 <div class="row myrow">
-    <div class="col-lg-6">
+    <div class="col-lg-6 col-sm-6">
       <h2 class="myh2"><?php echo __('Holiday'); ?></h2>
       <table class="table table-bordered table-striped">
                         <thead>
@@ -133,7 +134,37 @@ $personalevents= \App\PersonalEvent::all();
                         </tbody>
                     </table>
     </div>
-    <div class="col-lg-6">
+    
+    <div class="col-lg-6 col-sm-6">
+      <h2 class="myh2"><?php echo __('Events'); ?></h2>
+      <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th><?php echo __('SL'); ?></th>
+                                <th><?php echo __('Event'); ?></th>
+                                <th><?php echo __('Dated Start'); ?></th>
+                                 <th><?php echo __('Dated End'); ?></th>
+                                <th><?php echo __('Description'); ?></th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <?php $sl=1;?>
+                           
+                            <?php $__currentLoopData = $personalevents; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $events): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <tr>
+                                <td><?php echo $sl++; ?></td>
+                                <td><?php echo $events->personal_event; ?></td>
+                                <td><?php echo $events->start_date; ?></td>
+                                <td><?php echo $events->end_date; ?></td>
+                                <td><?php echo $events->personal_event_description; ?></td>
+                            </tr>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </tbody>
+                    </table>
+    
+    </div>
+  </div>
+    <div class="col-lg-6 col-sm-6">
       <h2 class="myh2-1"><?php echo __('Notice'); ?></h2>
        <table class="table table-bordered table-striped">
 
@@ -157,7 +188,7 @@ $personalevents= \App\PersonalEvent::all();
                         </tbody>
                     </table>
     </div>
-</div>
+
 
 <script type="text/javascript">
 var ctx = document.getElementById('myChart');
@@ -252,51 +283,11 @@ beginAtZero: true
 
   </div>
 
-    <?php if(count($personal_events)>0): ?>
-    <div class="box box-danger">
-      <div class="box-header">
-        <h3 class="box-title"><?php echo __('Events'); ?></h3>
-
-        <div class="box-tools">
-          <div class="input-group input-group-sm mysearch">
-            <input type="text" name="table_search" class="form-control pull-right" placeholder="<?php echo __('Search'); ?>">
-
-            <div class="input-group-btn">
-              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.box-header -->
-      <div class="box-body table-responsive no-padding">
-        <table  class="table table-bordered table-striped">
-          <tr>
-            <th><?php echo __('SL#'); ?></th>
-            <th><?php echo __('Event Name'); ?></th>
-            <th><?php echo __('Start Date'); ?></th>
-            <th><?php echo __('End Date'); ?></th>
-            <th><?php echo __('Created By'); ?></th>
-          </tr>
-          <?php ($sl = 1); ?>
-          <?php $__currentLoopData = $personal_events; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $personal_event): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <tr>
-            <td><?php echo $sl++; ?></td>
-            <td><span class="label label-primary"><?php echo $personal_event->personal_event; ?></span></td>
-            <td><span class="label label-warning"><?php echo date("d F Y", strtotime($personal_event->start_date)); ?></span></td>
-            <td><span class="label label-warning"><?php echo date("d F Y", strtotime($personal_event->end_date)); ?></span></td>
-            <td><?php echo $personal_event->name; ?></td>
-          </tr>
-          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </table>
-      </div>
-      <!-- /.box-body -->
-    </div>
-    <!-- /.box -->
-    <?php endif; ?>
+    
 
   </section>
   <!-- /.content -->
-  <?php endif; ?>
+  
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('administrator.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

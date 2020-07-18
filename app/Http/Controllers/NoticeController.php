@@ -96,14 +96,14 @@ class NoticeController extends Controller {
 	 * @param  \App\Holiday  $holidays
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show() {
+public function show() {
 		$notices = Notice::query()
 		->leftjoin('users as users', 'users.id', '=', 'notices.created_by')
 		->where('notices.deletion_status', 0)
 		->where('notices.publication_status', 1)
 		->orderBy('notices.id', 'DESC')
+		->select('users.name','notices.notice_title','notices.description','notices.created_at')
 		->paginate(5);
-		
 		return view('administrator.hrm.notice.show_notice', compact('notices'));
 	}
 

@@ -84,7 +84,7 @@
                             <td class="text-center">{{ date("d F Y", strtotime($employee['created_at'])) }}</td>
                            
                             <td class="text-center">
-                               <a href="#"><i class="icon fa fa-trash"></i> {{ __('delete') }}</a>
+                               <a href="{{route('deletejob', $employee['id'])}}"><i class="icon fa fa-trash"></i> {{ __('delete') }}</a>
                             </td>
                         </tr>
                         @endforeach

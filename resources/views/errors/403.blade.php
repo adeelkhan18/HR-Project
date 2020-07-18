@@ -17,7 +17,7 @@
 
             <div class="error-content">
                 <h3><i class="fa fa-warning text-yellow"></i> {{ __('Oops! Forbidden') }}</h3>
-                <p>{{ __('You don't have permission to access this page.') }}</p>
+                <p>{{ __('You dont have permission to access this page.') }}</p>
             </div>
             <!-- /.error-content -->
         </div>

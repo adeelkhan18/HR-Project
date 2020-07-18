@@ -28,10 +28,11 @@
                 </div>
             </div>
             <div class="box-body">
+                @can('admin')
                 <div class="col-md-6">
                     <a href="{{ url('/hrm/employee-awards/create') }}" class="btn btn-primary btn-flat"><i class="fa fa-plus"></i>{{ __(' Add employee award') }}</a>
                 </div>
-                
+                @endcan
                 <div  class="col-md-6">
                     <input type="text" id="myInput" class="form-control" placeholder="{{ __('Search..') }}">
                 </div>
@@ -90,9 +91,11 @@
                                   @endif
 
                                 </td>
+                                @can('admin')
                                 <td class="text-center">
                                    <a href="{{ url('/hrm/employee-awards/edit/' . $employee_aword['id']) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
                                 </td>
+                                @endcan
                             </tr>
                           @endforeach
 

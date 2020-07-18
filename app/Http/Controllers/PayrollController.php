@@ -18,6 +18,7 @@ class PayrollController extends Controller {
 			->orderBy('users.name', 'ASC')
 			->where('users.access_label', '>=', 2)
 			->where('users.access_label', '<=', 3)
+			->where('users.deletion_status','==',0)
 			->get(['designations.designation', 'users.name', 'users.id'])
 			->toArray();
 

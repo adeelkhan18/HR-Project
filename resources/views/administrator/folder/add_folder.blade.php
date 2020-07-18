@@ -54,7 +54,7 @@
                         <div class="col-md-6">
                             <label for="folder_name">{{ __('Folder Name') }} <span class="text-danger">*</span></label>
                             <div class="form-group{{ $errors->has('folder_name') ? ' has-error' : '' }} has-feedback">
-                                <input type="text" name="folder_name" id="folder_name" class="form-control" value="{{ old('folder_name') }}" placeholder="{{ __('Enter client name..') }}">
+                                <input type="text" name="folder_name" id="folder_name" class="form-control" value="{{ old('folder_name') }}" placeholder="{{ __('Enter folder name..') }}">
                                 @if ($errors->has('folder_name'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('folder_name') }}</strong>

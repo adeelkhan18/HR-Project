@@ -68,7 +68,7 @@
                             <th><?php echo __('SL'); ?></th>
                             <th><?php echo __('ID NO'); ?></th>
                             <th><?php echo __('Created For'); ?></th>
-                            <th><?php echo __('Don Task'); ?></th>
+                            <th><?php echo __('Completed Task'); ?></th>
                             <th><?php echo __('Create at'); ?></th>
                             <th><?php echo __('Task Detail'); ?></th>
                             <th><?php echo __('Task Status'); ?></th>

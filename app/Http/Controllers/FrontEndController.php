@@ -76,7 +76,7 @@ class FrontEndController extends Controller {
 
 		
 		if( $employee->save()){
-		return back()->with('message','Successfully Added');
+		return back()->with('message','Your Job Application has been recieved. Thank you for applying');
 
 		}else{
 		return back()->with('hasError','Error in server side');

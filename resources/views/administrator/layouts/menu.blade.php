@@ -2,7 +2,13 @@
     <ul class="sidebar-menu" data-widget="tree">
         <li><a href="{{ url('/dashboard')}}"><i class="fa fa-dashboard text-purple"></i> <span>{{ __('Dashboard') }}</span></a></li>
         
+           <li><a href="{{ url('/files/1') }}"><i class="fa fa-folder"></i>{{ __(' Files') }}</a></li>
         @permission('people')
+        @permission('manage-employee')
+             
+               
+                @endpermission
+
         <li class="treeview">
             <a href="#">
                 <i class="fa fa-users text-purple"></i> <span>{{ __('Employee Management') }}</span>
@@ -16,9 +22,17 @@
                 <li><a href="{{ url('/people/employees/create') }}"><i class="fa fa-circle-o"></i>{{ __(' New Employee') }}</a></li>
                 <li><a href="{{ url('/people/employees') }}"><i class="fa fa-circle-o"></i> {{ __('Manage Employee') }}</a></li>
                 @endpermission
+                @permission('manage-employee')
+                <li><a href="{{ url('/setting/designations') }}"><i class="fa fa-circle-o"></i>{{ __(' Designations') }}</a></li>
+                
+                @endpermission
+
                 @permission('manage-clients')
                  <li><a href="{{ url('people/clients/create') }}"><i class="fa fa-circle-o"></i>{{ __(' New Customer') }}</a></li>
                 <li><a href="{{ url('/people/clients') }}"><i class="fa fa-circle-o"></i> {{ __('Manage Clients') }}</a></li>
+                <li><a href="{{ url('/setting/client-types') }}"><i class="fa fa-circle-o"></i> {{ __('Manage Client Type') }}</a></li>
+                <li><a href="{{ url('/setting/departments') }}"><i class="fa fa-circle-o"></i> {{ __('Manage Departments') }}</a></li>
+
                 @endpermission
                 @permission('manage-references')
                 
@@ -69,6 +83,7 @@
             </ul>
         </li>
         @endpermission
+                
         @permission('attendance-management')
         <li class="treeview">
             <a href="#">
@@ -79,10 +94,13 @@
             </a>
             <ul class="treeview-menu">
                 @permission('manage-attendance')
+                 <li><a href="{{ url('setting/working-days') }}"><i class="fa fa-circle-o"></i>{{ __('Set Working days') }} </a></li>
+                 <li><a href="{{ url('setting/holidays') }}"><i class="fa fa-circle-o"></i>{{ __('Set Holidays') }} </a></li>
                 <li><a href="{{ url('/hrm/attendance/manage') }}"><i class="fa fa-circle-o"></i>{{ __('Manage Attendance') }} </a></li>
 
 
                 @endpermission
+
                 @permission('attendance-report')
                 <li><a href="{{ url('/hrm/attendance/details/report/go') }}"><i class="fa fa-circle-o"></i>{{ __(' Attendance Statement') }}</a></li>
                 <li><a href="{{ url('/hrm/attendance/report') }}"><i class="fa fa-circle-o"></i>{{ __(' Attendance Report') }}</a></li>
@@ -163,6 +181,7 @@
                 @permission('manage-notice')
                  <li><a href="{{ url('hrm/notice/create') }}"><i class="fa fa-circle-o"></i>{{ __('New Notice') }}</a></li>
                 <li><a href="{{ url('/hrm/notice') }}"><i class="fa fa-circle-o"></i>{{ __('Manage Notice') }}</a></li>
+                  <li><a href="{{ url('/setting/personal-events') }}"><i class="fa fa-circle-o"></i>{{ __('Add Personal Event') }}</a></li>
                 @endpermission
                 @permission('notice-board')
                 <li><a href="{{url('/hrm/notice/show')}}"><i class="fa fa-circle-o"></i> <span>{{ __('Notice list') }}</span></a></li>
@@ -230,6 +249,7 @@
 
             </ul>
         </li>
+        @endif
         <li class="treeview">
             <a href="#">
                 <i class="fa fa-users text-purple"></i> <span>{{ __('Task Management') }}</span>
@@ -238,30 +258,51 @@
                 </span>
             </a>
             <ul class="treeview-menu">
+                @can('admin')
                 <li><a href="{{ route('tcreat') }}"><i class="fa fa-circle-o"></i>{{ __(' New Task') }}</a></li>
+                @endcan
+                 @if(Auth::user()->role ==1)
                 <li><a href="{{ route('tall') }}"><i class="fa fa-circle-o"></i> {{ __('All Tasks') }}</a></li>
+                @else
+                <li><a href="{{ route('taskall') }}"><i class="fa fa-circle-o"></i> {{ __('All Tasks') }}</a></li>
+                @endif
+
+                 <li><a href="{{ route('performance') }}"><i class="fa fa-circle-o"></i> {{ __('Performance') }}</a></li>
                
 
             </ul>
         </li>
-        @endif
-        @if(Auth::user()->access_label !=1)
-            <li class="treeview">
+        
+       
+        
+          <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-users text-purple"></i> <span>{{ __('Task Management') }}</span>
+                    <i class="fa fa-trophy"></i> <span>{{ __('Awards') }}</span>
                     <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
                 </a>
+               
+              
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('taskall') }}"><i class="fa fa-circle-o"></i> {{ __('All Task') }}</a></li>
+                     @can('admin')
+                    <li><a href="{{ url('setting/award_categories') }}"><i class="fa fa-circle-o"></i> {{ __('Award Categories') }}</a></li>
+                      @endcan
 
+                    <li><a href="{{ url('hrm/employee-awards') }}"><i class="fa fa-circle-o"></i> {{ __('Employee Awards') }}</a></li>
 
                 </ul>
+                
+                    
+
+              
+              
             </li>
-        @endif
+        
         <li><a href="{{ url('/profile/user-profile') }}"><i class="fa fa-user text-purple"></i> <span>{{ __('Profile') }}</span></a></li>
+
         <li><a href="{{ url('/profile/change-password') }}"><i class="fa fa-key text-purple"></i> <span>{{ __('Change Password') }}</span></a></li>
+        
         <li>
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-lock text-purple"></i> <span>{{ __('Logout') }}</span></a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST">

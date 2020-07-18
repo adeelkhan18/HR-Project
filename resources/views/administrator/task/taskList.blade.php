@@ -66,7 +66,7 @@
                             <th>{{ __('SL') }}</th>
                             <th>{{ __('ID NO') }}</th>
                             <th>{{ __('Created For') }}</th>
-                            <th>{{ __('Don Task') }}</th>
+                            <th>{{ __('Completed Task') }}</th>
                             <th>{{ __('Create at') }}</th>
                             <th>{{ __('Task Detail') }}</th>
                             <th>{{ __('Task Status') }}</th>

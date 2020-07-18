@@ -307,7 +307,7 @@ class EmplController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy($id) {
+		public function destroy($id) {
 		$affected_row = User::where('id', $id)
 			->update(['deletion_status' => 1]);
 
@@ -316,5 +316,4 @@ class EmplController extends Controller {
 		}
 		return redirect('/people/employees')->with('exception', 'Operation failed !');
 	}
-
 }

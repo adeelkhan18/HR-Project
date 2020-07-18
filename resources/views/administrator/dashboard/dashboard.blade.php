@@ -85,7 +85,7 @@
 
 
 
-
+@endif
 
 
 <!-- =================Statistics start ========================-->
@@ -94,6 +94,7 @@
 $notics= \App\Notice::all();
 $holidays= \App\Holiday::all();
 $files= \App\File::all();
+
 
 $personalevents= \App\PersonalEvent::all();
 
@@ -108,7 +109,7 @@ $personalevents= \App\PersonalEvent::all();
 </div>
 
 <div class="row myrow">
-    <div class="col-lg-6">
+    <div class="col-lg-6 col-sm-6">
       <h2 class="myh2">{{ __('Holiday') }}</h2>
       <table class="table table-bordered table-striped">
                         <thead>
@@ -133,7 +134,37 @@ $personalevents= \App\PersonalEvent::all();
                         </tbody>
                     </table>
     </div>
-    <div class="col-lg-6">
+    
+    <div class="col-lg-6 col-sm-6">
+      <h2 class="myh2">{{ __('Events') }}</h2>
+      <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>{{ __('SL') }}</th>
+                                <th>{{ __('Event') }}</th>
+                                <th>{{ __('Dated Start') }}</th>
+                                 <th>{{ __('Dated End') }}</th>
+                                <th>{{ __('Description') }}</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <?php $sl=1;?>
+                           
+                            @foreach($personalevents as $events)
+                            <tr>
+                                <td>{{$sl++}}</td>
+                                <td>{{$events->personal_event}}</td>
+                                <td>{{$events->start_date}}</td>
+                                <td>{{$events->end_date}}</td>
+                                <td>{{$events->personal_event_description}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+    
+    </div>
+  </div>
+    <div class="col-lg-6 col-sm-6">
       <h2 class="myh2-1">{{ __('Notice') }}</h2>
        <table class="table table-bordered table-striped">
 
@@ -157,7 +188,7 @@ $personalevents= \App\PersonalEvent::all();
                         </tbody>
                     </table>
     </div>
-</div>
+
 
 <script type="text/javascript">
 var ctx = document.getElementById('myChart');
@@ -252,50 +283,10 @@ beginAtZero: true
 
   </div>
 
-    @if(count($personal_events)>0)
-    <div class="box box-danger">
-      <div class="box-header">
-        <h3 class="box-title">{{ __('Events') }}</h3>
-
-        <div class="box-tools">
-          <div class="input-group input-group-sm mysearch">
-            <input type="text" name="table_search" class="form-control pull-right" placeholder="{{ __('Search') }}">
-
-            <div class="input-group-btn">
-              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.box-header -->
-      <div class="box-body table-responsive no-padding">
-        <table  class="table table-bordered table-striped">
-          <tr>
-            <th>{{ __('SL#') }}</th>
-            <th>{{ __('Event Name') }}</th>
-            <th>{{ __('Start Date') }}</th>
-            <th>{{ __('End Date') }}</th>
-            <th>{{ __('Created By') }}</th>
-          </tr>
-          @php($sl = 1)
-          @foreach($personal_events as $personal_event)
-          <tr>
-            <td>{{ $sl++ }}</td>
-            <td><span class="label label-primary">{{ $personal_event->personal_event }}</span></td>
-            <td><span class="label label-warning">{{ date("d F Y", strtotime($personal_event->start_date)) }}</span></td>
-            <td><span class="label label-warning">{{ date("d F Y", strtotime($personal_event->end_date)) }}</span></td>
-            <td>{{ $personal_event->name }}</td>
-          </tr>
-          @endforeach
-        </table>
-      </div>
-      <!-- /.box-body -->
-    </div>
-    <!-- /.box -->
-    @endif
+    
 
   </section>
   <!-- /.content -->
-  @endif
+  
 </div>
 @endsection

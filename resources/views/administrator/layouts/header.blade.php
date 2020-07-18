@@ -52,6 +52,7 @@
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
+                            
                             <div class="pull-left">
                                 <a href="{{ url('/profile/user-profile') }}" class="btn btn-default btn-flat">{{ __('Profile') }}</a>
                             </div>

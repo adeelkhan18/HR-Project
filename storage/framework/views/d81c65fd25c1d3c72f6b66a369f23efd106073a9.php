@@ -53,6 +53,7 @@
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
+                            
                             <div class="pull-left">
                                 <a href="<?php echo url('/profile/user-profile'); ?>" class="btn btn-default btn-flat"><?php echo __('Profile'); ?></a>
                             </div>

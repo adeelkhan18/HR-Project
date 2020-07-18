@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2020 at 06:01 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Generation Time: Jul 17, 2020 at 08:04 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,8 +36,8 @@ CREATE TABLE `appliedcadidtes` (
   `phone` varchar(100) DEFAULT NULL,
   `cv` varchar(100) DEFAULT NULL,
   `application_status` varchar(100) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -48,7 +48,13 @@ INSERT INTO `appliedcadidtes` (`id`, `name`, `jobid`, `email`, `phone`, `cv`, `a
 (1, 'Clare Rowland', 1, 'kiwisep@mailinator.com', '+1 (777) 801-5549', '150e4.jpg', 'Approved', '2020-06-23 06:23:11', '2020-06-23 06:23:11'),
 (2, 'Mr Adeel', 1, 'jibyz@mailinator.com', '+1 (857) 904-1014', '841682b0.jpg', 'Not Approved', '2020-06-28 23:09:12', '2020-06-28 23:09:12'),
 (3, 'Mr Adeel', 2, 'adeel@gmail.com', '0300', '534799blog4.jpg', 'Not Approved', '2020-07-09 03:07:49', '2020-07-09 03:07:49'),
-(4, 'test', 2, 'malikshafiq7088@gmail.com', '23442', '386339e2.jpg', 'Approved', '2020-07-09 03:41:45', '2020-07-09 03:41:45');
+(4, 'test', 2, 'malikshafiq7088@gmail.com', '23442', '386339e2.jpg', 'Approved', '2020-07-09 03:41:45', '2020-07-09 03:41:45'),
+(5, 'adeel', 2, 'adeel@gmail.com', '0343-8499447', '461pof jobs.pdf', NULL, '2020-07-13 11:39:42', '2020-07-13 11:39:42'),
+(6, 'waseem', 2, 'was@yahoo.com', '0345-098999876', '9842020-06-26 (7)--MOLAW APPLICATION.pdf', NULL, '2020-07-13 11:49:38', '2020-07-13 11:49:38'),
+(7, 'ramiz', 2, 'ramiz@mail.com', '88888888', '63220px-COMSATS_new_logo.jpg', NULL, '2020-07-13 11:54:25', '2020-07-13 11:54:25'),
+(8, 'waqas', 2, 'wiki@gmail.com', '676767676', '221form.png', NULL, '2020-07-13 11:56:42', '2020-07-13 11:56:42'),
+(9, 'talha', 2, 'talha@gmail.com', '7876776', '934220px-COMSATS_new_logo.jpg', 'Not Approved', '2020-07-13 11:58:20', '2020-07-13 11:58:20'),
+(10, 'adeel khan', 4, 'adeeljadoon947@gmail.com', '03333333', '678Waleed Khan Jadoon (1).docx', 'Approved', '2020-07-16 12:52:29', '2020-07-16 12:52:29');
 
 -- --------------------------------------------------------
 
@@ -147,7 +153,22 @@ INSERT INTO `attendances` (`id`, `created_by`, `user_id`, `attendance_date`, `at
 (71, 1, 14, '2020-06-28', 0, 0, '11:12:00', '18:05:00', '2020-06-28 23:37:46', '2020-06-28 23:37:46'),
 (72, 1, 16, '2020-06-28', 0, 0, '11:12:00', '18:05:00', '2020-06-28 23:37:46', '2020-06-28 23:37:46'),
 (73, 1, 15, '2020-06-28', 0, 0, '11:12:00', '18:05:00', '2020-06-28 23:37:46', '2020-06-28 23:37:46'),
-(74, 1, 11, '2020-06-28', 0, 0, '11:12:00', '18:05:00', '2020-06-28 23:37:46', '2020-06-28 23:37:46');
+(74, 1, 11, '2020-06-28', 0, 0, '11:12:00', '18:05:00', '2020-06-28 23:37:46', '2020-06-28 23:37:46'),
+(75, 1, 13, '2020-07-12', 1, 0, '11:12:00', '18:05:00', '2020-07-12 17:22:11', '2020-07-12 17:22:11'),
+(76, 1, 14, '2020-07-12', 1, 0, '11:12:00', '18:05:00', '2020-07-12 17:22:11', '2020-07-12 17:22:11'),
+(77, 1, 20, '2020-07-12', 1, 0, '11:12:00', '18:05:00', '2020-07-12 17:22:11', '2020-07-12 17:22:11'),
+(78, 1, 16, '2020-07-12', 0, 0, '11:12:00', '18:05:00', '2020-07-12 17:22:11', '2020-07-12 17:22:11'),
+(79, 1, 15, '2020-07-12', 1, 0, '11:12:00', '18:05:00', '2020-07-12 17:22:11', '2020-07-12 17:22:11'),
+(80, 1, 17, '2020-07-12', 1, 0, '11:12:00', '18:05:00', '2020-07-12 17:22:11', '2020-07-12 17:22:11'),
+(81, 1, 11, '2020-07-12', 1, 0, '11:12:00', '18:05:00', '2020-07-12 17:22:11', '2020-07-12 17:22:11'),
+(82, 1, 13, '2020-07-13', 0, 1, '09:00:00', '17:00:00', '2020-07-13 12:44:20', '2020-07-13 12:44:20'),
+(83, 1, 14, '2020-07-13', 1, 0, '09:00:00', '17:00:00', '2020-07-13 12:44:20', '2020-07-13 12:44:20'),
+(84, 1, 20, '2020-07-13', 1, 0, '09:00:00', '17:00:00', '2020-07-13 12:44:20', '2020-07-13 12:44:20'),
+(85, 1, 16, '2020-07-13', 1, 0, '09:00:00', '17:00:00', '2020-07-13 12:44:20', '2020-07-13 12:44:20'),
+(86, 1, 15, '2020-07-13', 1, 0, '09:00:00', '17:00:00', '2020-07-13 12:44:20', '2020-07-13 12:44:20'),
+(87, 1, 17, '2020-07-13', 1, 0, '09:00:00', '17:00:00', '2020-07-13 12:44:20', '2020-07-13 12:44:20'),
+(88, 1, 11, '2020-07-13', 1, 0, '09:00:00', '17:00:00', '2020-07-13 12:44:20', '2020-07-13 12:44:20'),
+(89, 1, 23, '2020-07-13', 1, 0, '09:00:00', '17:00:00', '2020-07-13 12:44:20', '2020-07-13 12:44:20');
 
 -- --------------------------------------------------------
 
@@ -160,7 +181,7 @@ CREATE TABLE `award_categories` (
   `created_by` int(11) NOT NULL,
   `award_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_status` tinyint(4) NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -186,7 +207,7 @@ CREATE TABLE `bonuses` (
   `bonus_month` date NOT NULL,
   `bonus_amount` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `bonus_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -200,7 +221,8 @@ INSERT INTO `bonuses` (`id`, `created_by`, `user_id`, `bonus_name`, `bonus_month
 (2, 1, 11, 'Working Perf.', '2019-09-01', '4000', '<p>vnbvnvbn<br></p>', 0, '2019-09-03 12:53:31', '2019-09-03 12:53:31'),
 (3, 1, 11, 'DDR', '2019-10-01', '5000', 'bnbbvnbvn', 0, '2019-09-03 12:54:36', '2019-09-25 02:43:26'),
 (4, 1, 15, 'test', '2020-06-01', '20', 'afsafa', 0, '2020-06-28 19:22:17', '2020-06-28 19:22:17'),
-(5, 1, 15, 'eidi', '2020-12-01', '3000', 'test', 0, '2020-06-28 23:32:13', '2020-06-28 23:32:13');
+(5, 1, 15, 'eidi', '2020-12-01', '3000', 'test', 0, '2020-06-28 23:32:13', '2020-06-28 23:32:13'),
+(6, 1, 13, 'eid', '2020-07-01', '2000', 'happy eid', 0, '2020-07-13 12:36:18', '2020-07-13 12:36:18');
 
 -- --------------------------------------------------------
 
@@ -214,7 +236,7 @@ CREATE TABLE `client_types` (
   `client_type` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `client_type_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_status` tinyint(4) NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -224,18 +246,11 @@ CREATE TABLE `client_types` (
 --
 
 INSERT INTO `client_types` (`id`, `created_by`, `client_type`, `client_type_description`, `publication_status`, `deletion_status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'sed', 'Repellendus voluptatem distinctio atque voluptas veritatis. Et amet non sapiente enim voluptates ut reprehenderit. Id ipsum ut nam magnam quaerat sequi praesentium. Occaecati dolore sapiente consequatur esse. Et tempore neque ipsam perferendis facere et.', 1, 0, '2018-04-12 06:25:15', '2019-09-24 10:14:19'),
-(2, 1, 'repellat', 'Voluptas vero quasi quam et sed. Maxime voluptatibus molestias non in veniam magni magnam. Quidem temporibus molestiae ipsam sint voluptatem. In architecto numquam quis aut ut.', 1, 0, '2018-04-12 06:25:15', '2019-09-25 02:25:36'),
-(3, 1, 'earum', 'Qui similique ea quisquam. Omnis qui molestiae totam ex omnis doloremque et. Ea doloribus ipsam corrupti accusantium id voluptas harum.', 1, 0, '2018-04-12 06:25:15', '2019-09-24 10:14:36'),
-(4, 1, 'qui', 'Autem autem dolorem quis sed iure. Exercitationem magnam illum eos ullam fugit. Unde quo tenetur omnis voluptatem qui minima.', 1, 0, '2018-04-12 06:25:15', '2019-09-25 02:27:38'),
-(5, 1, 'corporis', 'Minima voluptatem iusto unde aliquid in. Natus enim ad aut cum reprehenderit ex fugiat. Architecto est in cumque quia veniam dignissimos.', 1, 0, '2018-04-12 06:25:15', '2018-04-12 06:25:15'),
-(6, 1, 'est', 'Accusamus quae quisquam non doloribus nemo quisquam sunt. Nostrum a non perferendis consequuntur. Commodi et non aut earum autem molestiae veniam.', 1, 0, '2018-04-12 06:25:15', '2019-09-24 10:14:30'),
-(7, 1, 'quia', 'Dolorem porro est dicta eveniet. Odit totam sunt et. Error non possimus non accusantium harum. Molestiae est est consequatur eum alias nesciunt.', 1, 0, '2018-04-12 06:25:15', '2019-09-24 10:14:25'),
-(8, 1, 'sint', 'Aliquam aliquid totam quaerat illum nemo voluptatem. Soluta odit eligendi omnis beatae aliquam eum et hic. Ut debitis pariatur est quidem. Vitae nobis veritatis cum. Vel sit qui sit quia.', 0, 1, '2018-04-12 06:25:15', '2019-08-31 11:08:36'),
-(9, 1, 'ut', 'Excepturi et excepturi quia sunt hic. Impedit incidunt ratione est velit.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:13:50'),
-(10, 1, 'porro', 'Ad quia qui id nobis qui consequatur. Eos et enim itaque nihil quasi ipsa aut. Est veniam inventore in fugit facilis asperiores iusto. Non nihil aperiam nemo nostrum eos perferendis porro. Quas iusto qui cumque tempore.', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
-(11, 1, 'Full tyime', '<p>fdgfdgffgd<br></p>', 1, 0, '2019-08-31 11:04:28', '2019-08-31 11:04:28'),
-(12, 1, 'Karim Bond', '<p>\r\n<strong>Lorem Ipsum</strong> is simply dummy text of the printing and \r\ntypesetting industry. Lorem Ipsum has been the industry\'s standard dummy\r\n text ever since the 1500s, when an unknown printer took a galley of \r\ntype and scrambled it to make a type specimen book. \r\n\r\n<br></p>', 1, 0, '2019-09-02 09:58:13', '2019-09-02 09:58:13');
+(1, 1, 'Potential Client', 'The Potential Paul is a type of customer that is on the very beginning of your sales', 1, 0, '2018-04-12 06:25:15', '2019-09-24 10:14:19'),
+(2, 1, 'New Client', 'fresh customer that just bought something from you', 1, 0, '2018-04-12 06:25:15', '2019-09-25 02:25:36'),
+(3, 1, 'Impulsive Client', 'This is the type of customer that can make a buying decision in an instant, provided that the conditions are right.', 1, 0, '2018-04-12 06:25:15', '2019-09-24 10:14:36'),
+(4, 1, 'Discount Client', 'type of customer that sees value in your product but won’t buy it at full price.', 1, 0, '2018-04-12 06:25:15', '2019-09-25 02:27:38'),
+(5, 1, 'Loyal Client', 'This type of customers keeps coming back for more. Apart from having a significant impact on your revenue, he will be also your brand’s ambassador.', 1, 0, '2018-04-12 06:25:15', '2018-04-12 06:25:15');
 
 -- --------------------------------------------------------
 
@@ -251,7 +266,7 @@ CREATE TABLE `deductions` (
   `deduction_month` date NOT NULL,
   `deduction_amount` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deduction_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -263,7 +278,8 @@ CREATE TABLE `deductions` (
 INSERT INTO `deductions` (`id`, `created_by`, `user_id`, `deduction_name`, `deduction_month`, `deduction_amount`, `deduction_description`, `deletion_status`, `created_at`, `updated_at`) VALUES
 (1, 1, 13, 'Absence', '2019-09-01', '34', 'hjkjjjhk', 0, '2019-09-24 11:02:50', '2019-09-25 02:43:47'),
 (2, 1, 15, 'Macon Sims', '2020-07-01', '73', 'Proident molestias', 0, '2020-06-28 19:23:09', '2020-06-28 19:23:09'),
-(3, 1, 15, 'Funds deductions', '2020-06-01', '400', 'testts', 0, '2020-06-28 23:34:25', '2020-06-28 23:34:25');
+(3, 1, 15, 'Funds deductions', '2020-06-01', '400', 'testts', 0, '2020-06-28 23:34:25', '2020-06-28 23:34:25'),
+(4, 1, 13, 'absentee', '2020-07-01', '1000', 'absentee deduction', 0, '2020-07-13 12:37:19', '2020-07-13 12:37:19');
 
 -- --------------------------------------------------------
 
@@ -277,7 +293,7 @@ CREATE TABLE `departments` (
   `department` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `department_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_status` tinyint(4) NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -287,13 +303,12 @@ CREATE TABLE `departments` (
 --
 
 INSERT INTO `departments` (`id`, `created_by`, `department`, `department_description`, `publication_status`, `deletion_status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Lehner PLC', 'Aliquam earum eligendi soluta inventore sit nulla nisi. Tempora ut necessitatibus eos laborum rerum commodi. Blanditiis architecto rerum libero et nulla cupiditate. Cum doloremque laborum ab sunt et. Quam eligendi amet eius tempore nesciunt commodi. Enim distinctio autem et expedita non qui error est. Magni similique id quod. Exercitationem dolorum corrupti quos natus similique ut est rerum. Velit officia deleniti quaerat rerum vero veritatis. Officia magni assumenda aut nisi quae consectetur.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:22:22'),
-(2, 1, 'Lehner-Walsh', 'Nemo in beatae alias voluptatem iste exercitationem et. Omnis temporibus aut et. Saepe iusto est pariatur sequi ea aut est recusandae. Temporibus cupiditate sapiente quia temporibus. Modi consequatur id sed quod ut earum repudiandae nam. Enim omnis sed quod sint nihil voluptatibus quia. Excepturi id ipsum qui quos enim. Reiciendis eos consequatur consequatur quia eius quidem. Doloremque itaque et repudiandae delectus natus est maxime.', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
-(3, 1, 'Senger-Wilkinson', 'Dolores dignissimos nam quo cupiditate veritatis. Expedita est vel debitis tenetur. Quas eius expedita amet et aut iusto quis esse. Rerum labore numquam cum. Eos delectus voluptatem fugit ad sed. Rem ipsam ut sed quidem error et. Repellat odio ad accusamus non. Ut aliquam quam voluptas sed. Soluta ab molestiae dolorem architecto voluptatum. Eaque soluta similique assumenda. Voluptas quaerat autem dolores. Unde molestiae vero quisquam recusandae exercitationem.', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
-(4, 1, 'Bahringer-Sauer', 'Aliquid sint sit explicabo laborum facilis. Nam numquam ut quos. Ut qui perspiciatis sit dolore. Et accusamus perferendis harum architecto sunt minima. Voluptatem voluptatem et explicabo quia aut consequatur. Ut quia vero molestiae earum quis odit. Et delectus quis excepturi temporibus dolor. Consequatur assumenda eligendi ex delectus debitis. Ea consequatur a vel sunt pariatur et sit. Est veniam aut quo ratione amet.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:22:27'),
-(5, 1, 'Klein LLC', 'Omnis magnam facere earum. Corrupti tenetur beatae quod ut placeat. Qui et ut et aut vero. Nisi ea deserunt alias excepturi animi illum. Animi nulla fugiat itaque reprehenderit qui. Deleniti nulla et dolor id est. Facilis a non nostrum. Aperiam voluptatem delectus est ut est. Porro quia illo quia eos. Quas asperiores qui rerum temporibus tempore voluptatem. Pariatur repudiandae magnam voluptatibus. Unde incidunt ut vitae voluptas ipsum.', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
-(6, 1, 'Marketing', '<p>sdfsdfdsfds<br></p>', 1, 0, '2019-08-31 11:04:47', '2019-08-31 11:04:47'),
-(7, 1, 'Sales', 'fdfgdfgdff', 1, 0, '2019-08-31 11:09:23', '2019-09-25 03:38:15');
+(1, 1, 'Administration', 'An Administrator provides office and administrative support to either a team or individual. This role is vital for the smooth-running of a business. Duties may include fielding telephone calls, receiving and directing visitors, word processing, creating spreadsheets and presentations, and filing.\r\n', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:22:22'),
+(2, 1, 'IT services', 'The information technology department in an organization is responsible for the architecture, hardware, software and networking of computers in the company. As an IT professional, you perform a number of duties to ensure that employees have full access to the computer systems.', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
+(3, 1, 'Product Development', 'Product development, also called new product management, is a series of steps that includes the conceptualization, design, development and marketing of newly created or newly rebranded goods or services', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
+(4, 1, 'Research and Development', 'Research and development (R&D) includes activities that companies undertake to innovate and introduce new products and services. It is often the first stage in the development process. The goal is typically to take new products and services to market and add to the company\'s bottom line', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:22:27'),
+(5, 1, 'HR', 'An HR department is tasked with maximizing employee productivity and protecting the company from any issues that may arise within the workforce. HR responsibilities include compensation and benefits, recruitment, firing, and keeping up to date with any laws that may affect the company and its employees.', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
+(6, 1, 'Accounts and Finance', 'The accounting and finance department is at the centre of any organization and is responsible for ensuring the efficient financial management and financial controls necessary to support all business activities.', 1, 0, '2019-08-31 11:04:47', '2019-08-31 11:04:47');
 
 -- --------------------------------------------------------
 
@@ -308,7 +323,7 @@ CREATE TABLE `designations` (
   `designation` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `designation_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_status` tinyint(4) NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -318,18 +333,18 @@ CREATE TABLE `designations` (
 --
 
 INSERT INTO `designations` (`id`, `created_by`, `department_id`, `designation`, `designation_description`, `publication_status`, `deletion_status`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 'Hackett-Treutel', 'Fugiat nostrum itaque sapiente velit assumenda in aperiam eum. Consequatur temporibus sunt necessitatibus ut. Soluta eum veritatis magnam aut. Voluptatem laudantium est voluptates eveniet et. Velit dolore unde velit sunt neque ea perferendis recusandae. Ea quasi adipisci dolorum sit similique magni. Debitis eius voluptas doloribus repellendus. Sint sit corrupti ipsum molestiae architecto ut maiores nulla. Sint repellat est et et asperiores corrupti.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 09:59:43'),
-(2, 1, 4, 'Satterfield-Cremin', 'Ea rem deleniti nostrum voluptatem. Et ducimus optio voluptatem ut consequatur. Dolorum sint eius asperiores non nihil. Molestias ex perspiciatis praesentium non. Et sint magni qui sed nostrum. Enim voluptatibus laborum eveniet debitis numquam consequatur. Praesentium accusantium eveniet ut omnis earum facilis dolores. Ipsum iusto quod ratione eos in aspernatur.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:24:15'),
-(3, 1, 3, 'Kuvalis-Mitchell', 'Tempore quod molestias sed velit vel quas. Qui quisquam fuga in ducimus error dolor. Qui ut officiis occaecati voluptates dolore. Sit est consequatur provident. Eos tempore adipisci at nisi voluptatem commodi. Deserunt neque officiis harum ipsa nostrum. Ut vel non exercitationem cum laboriosam. Dolorum enim est maxime quia adipisci. Praesentium quis aut harum. Ea error et dolorem id sunt. Aut laborum quibusdam eum quis. Asperiores quia aut eum quod quaerat architecto harum.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:24:03'),
-(4, 1, 5, 'Kirlin, Reinger and Haag', 'Doloremque consequatur accusantium molestiae dolores odio. Eos vero rem architecto et ea veniam provident. Porro qui illo ad assumenda. Illum at deserunt quod qui non consequatur veritatis. Tempore deserunt architecto tempore molestiae provident et odio. Consectetur quia similique ea non nostrum et. Distinctio iste quam porro dolorem ut pariatur aut.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:23:52'),
-(5, 1, 3, 'Towne, Jerde and Littel', 'Consequatur eligendi modi consequatur eligendi. Perferendis laborum voluptas ipsum distinctio numquam. Non illo hic alias repudiandae at atque itaque in. Et ipsam nulla et voluptatem illo illo aut sequi. Maxime cumque eos tenetur est. Qui dolores fugit nihil modi inventore. Adipisci sint at cumque consequatur ullam. Optio est qui laudantium fugiat architecto minus. Earum eveniet nam ut sunt enim. Facere reprehenderit aut doloribus. Qui labore qui velit voluptatem dolores distinctio harum.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:24:25'),
-(6, 1, 3, 'Kovacek-Barrows', 'Aperiam earum eius quia deleniti voluptatem. Quam omnis dolor asperiores rem quasi reiciendis minima. Cupiditate impedit perferendis quis quia voluptatum quasi necessitatibus. Omnis et quo porro. Sit possimus voluptatem natus officia totam in. Quam voluptas quis ipsa et. Saepe quo et aliquid unde ratione et est. Quia libero rerum blanditiis voluptatem qui ducimus. Consectetur eum ut nisi tempore consequatur et expedita.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:23:58'),
-(7, 1, 2, 'Hudson Inc', 'Repellat quasi soluta fugiat nobis. Aut aliquam qui atque optio autem ex. Voluptates quis atque culpa molestias temporibus. Vitae commodi atque nulla sed perferendis quam ut. Adipisci ut placeat aperiam ratione itaque. Nulla velit omnis accusamus delectus voluptatibus. Blanditiis vel aut aperiam incidunt. Ducimus nulla illo dolorem quia commodi. Assumenda illo dolorem voluptatem. Iste nihil quia voluptatem vero sunt veniam. Dolorem suscipit repellat veniam dicta.', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
-(8, 1, 4, 'Schmitt Group', 'Ipsam qui est numquam. Magnam qui in at at eum laudantium. Eum possimus et mollitia explicabo quibusdam excepturi expedita. Iusto nihil vero aspernatur esse ab alias occaecati aut. Ut id voluptatibus sunt ut at cupiditate. Vero quo quia at cumque consectetur. Exercitationem pariatur est debitis quam exercitationem pariatur qui. Magnam reiciendis magnam voluptatum aspernatur. Fugiat omnis ipsum veniam qui itaque modi qui. Fugiat soluta autem qui voluptatum est.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:24:20'),
-(9, 1, 3, 'O\'Conner-Hilll', 'Accusamus et tempora soluta quia saepe. Praesentium commodi praesentium voluptas eum aut eos. Eveniet qui eius rerum hic pariatur. Sint optio quae eveniet vel corrupti dolores. Qui asperiores non porro ullam odio. Quae libero quam blanditiis culpa odio consequatur sit. Rerum voluptates sit repellendus quas quis cum atque. Velit sit eius deleniti enim asperiores minima. Molestias consequatur soluta eius et ducimus harum et.', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
-(10, 1, 2, 'Predovic Group', 'Quaerat voluptas consequuntur esse quibusdam. Repellendus fugit sequi aperiam. Ut hic qui veniam explicabo. Magnam omnis ullam sit quia. Aut ut omnis quisquam repudiandae aut. Voluptatem dolorem praesentium vel et aperiam qui. Nihil non ut aut dignissimos ex error. Similique facere asperiores et ullam in possimus at. Dolor illo perspiciatis molestias repudiandae voluptas pariatur. Laboriosam autem vel commodi ipsum tempora non harum expedita.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:24:09'),
-(11, 1, 5, 'Masum', '<p>dsfdsfdsf<br></p>', 1, 0, '2019-08-31 11:02:32', '2019-08-31 11:02:32'),
-(12, 1, 6, 'Sr. Executive', '<p>dfgdgdg<br></p>', 1, 0, '2019-08-31 11:05:14', '2019-08-31 11:05:14');
+(1, 1, 1, 'Chief Executive Officer', 'A chief executive officer (CEO) is the highest-ranking executive in a company, whose primary responsibilities include making major corporate decisions, managing the overall operations and resources of a company', 1, 0, '2018-04-12 06:25:16', '2019-09-24 09:59:43'),
+(2, 1, 3, 'Project Leader', 'The project leader engages the team, motivating them, taking care of their needs and maintaining a friendly and productive work environment. Some of their primary responsibilities include: Attending meetings with other leaders. Developing progress reports regarding projects they\'re working on', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:24:15'),
+(3, 1, 4, 'Senior Software Engineer', 'Develops information systems by studying operations; designing, developing, and installing software solutions; supports and develops software team', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:24:03'),
+(4, 1, 4, 'Software Engineer', ' Improving system quality by identifying issues and common patterns, and developing standard operating procedures. Enhancing applications by identifying opportunities for improvement, making recommendations and designing and implementing systems', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:23:52'),
+(5, 1, 2, 'Software Developer', 'Researching, designing, implementing and managing software programs. Testing and evaluating new programs. ... Working closely with other developers, UX designers, business and systems analysts.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:24:25'),
+(6, 1, 2, 'Junior Software Developer', 'A junior software developer works on a development team writing and maintaining code for computer applications. As a junior software developer, your primary responsibilities are to learn the codebase, work on small bug fixes, and participate in paired programming with mid-level and senior developers.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:23:58'),
+(7, 1, 2, 'Quality Testing Officer', 'QA engineer responsibilities include designing and implementing tests, debugging and defining corrective actions.', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
+(8, 1, 2, 'Software  Testing Officer', 'Software Testers are responsible for the quality of software development and deployment. They are involved in performing automated and manual tests to ensure the software created by developers is fit for purpose. Some of the duties include analysis of software, and systems, mitigate risk and prevent software issues.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:24:20'),
+(9, 1, 5, 'HR officer', 'Human resources (HR) officers are responsible for hiring, developing and looking after employees. This involves functions such as training and monitoring performance. Some employers offer financial assistance and study leave to enable employees to gain an approved CIPD qualification.', 1, 0, '2018-04-12 06:25:16', '2018-04-12 06:25:16'),
+(10, 1, 1, 'Staff', 'An office staff is an individual employed as a clerical worker in an office. ... The role of the office staff also includes filing document and performing office machine operations. Other duties and responsibilities include stenography, word processing and typing, bookkeeping, and answering of telephones.', 1, 0, '2018-04-12 06:25:16', '2019-09-24 10:24:09'),
+(11, 1, 6, 'Sales Executive', 'Identifies business opportunities by identifying prospects and evaluating their position in the industry; researching and analyzing sales options. Sells products by establishing contact and developing relationships with prospects; recommending solutions', 1, 0, '2019-08-31 11:02:32', '2019-08-31 11:02:32'),
+(12, 1, 1, 'Office Boy', 'Office boys perform various basic administrative duties, such as serving beverages to the guests or staff, handling electronic files and papers, greeting visitors and so on. ... Coordinating the maintenance and repair of office equipment', 1, 0, '2019-08-31 11:05:14', '2019-08-31 11:05:14');
 
 -- --------------------------------------------------------
 
@@ -346,7 +361,7 @@ CREATE TABLE `employee_awards` (
   `select_month` date NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_status` tinyint(4) NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -372,8 +387,8 @@ CREATE TABLE `expence_managements` (
   `purchased_from` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `purchased_date` date NOT NULL,
   `amount_spent` int(11) NOT NULL,
-  `purchased_details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `purchased_details` text COLLATE utf8mb4_unicode_ci,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -422,7 +437,7 @@ CREATE TABLE `files` (
   `caption` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `file_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_status` tinyint(4) DEFAULT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -446,7 +461,7 @@ CREATE TABLE `folders` (
   `folder_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `folder_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_status` tinyint(4) NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -491,7 +506,7 @@ CREATE TABLE `holidays` (
   `date` date NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_status` tinyint(4) NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -515,7 +530,7 @@ CREATE TABLE `increments` (
   `amount` double DEFAULT NULL,
   `emp_id` int(11) DEFAULT NULL,
   `date` varchar(30) DEFAULT NULL,
-  `incr_purpose` text DEFAULT NULL,
+  `incr_purpose` text,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -539,7 +554,8 @@ INSERT INTO `increments` (`id`, `created_by`, `amount`, `emp_id`, `date`, `incr_
 (21, 1, 20, 15, '2020-06', 'test', '2020-06-28 19:20:34', '2020-06-28 19:20:34'),
 (22, 1, 200, 14, '2020-07', 'something', '2020-06-28 23:22:46', '2020-06-28 23:22:46'),
 (23, 1, 200, 13, '2020-07', 'somethng', '2020-06-28 23:23:35', '2020-06-28 23:23:35'),
-(24, 1, 2000, 15, '2020-08', 'Best perfornace end of the year', '2020-06-28 23:24:19', '2020-06-28 23:24:19');
+(24, 1, 2000, 15, '2020-08', 'Best perfornace end of the year', '2020-06-28 23:24:19', '2020-06-28 23:24:19'),
+(25, 1, 8000, 13, '2020-07', 'annual', '2020-07-13 12:34:31', '2020-07-13 12:34:31');
 
 -- --------------------------------------------------------
 
@@ -550,19 +566,19 @@ INSERT INTO `increments` (`id`, `created_by`, `amount`, `emp_id`, `date`, `incr_
 CREATE TABLE `jobs` (
   `id` int(11) NOT NULL,
   `title` varchar(100) DEFAULT NULL,
-  `Location` text DEFAULT NULL,
+  `Location` text,
   `JobType` varchar(100) NOT NULL DEFAULT 'Fulltime',
   `Category` varchar(100) DEFAULT NULL,
   `WorkShift` varchar(100) DEFAULT NULL,
   `NoOfOpenings` varchar(100) DEFAULT NULL,
   `Joblevel` varchar(100) DEFAULT NULL,
   `JobExperience` varchar(100) DEFAULT NULL,
-  `JobDescription` text DEFAULT NULL,
-  `Responsibilities` text DEFAULT NULL,
-  `SkillSet` text DEFAULT NULL,
+  `JobDescription` text,
+  `Responsibilities` text,
+  `SkillSet` text,
   `Salary_start` varchar(100) DEFAULT NULL,
   `Salary_end` varchar(100) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` varchar(255) DEFAULT NULL,
   `status` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -573,7 +589,9 @@ CREATE TABLE `jobs` (
 
 INSERT INTO `jobs` (`id`, `title`, `Location`, `JobType`, `Category`, `WorkShift`, `NoOfOpenings`, `Joblevel`, `JobExperience`, `JobDescription`, `Responsibilities`, `SkillSet`, `Salary_start`, `Salary_end`, `created_at`, `updated_at`, `status`) VALUES
 (1, 'Illo eiusmod dolore', 'Expedita suscipit ve', 'Halftime', 'Dolores dolores dolo', 'Day Shift', '1', 'Manager', 'Iusto obcaecati solu', 'Maiores minim volupt', 'Praesentium exceptur', 'Quis cumque impedit', 'Qui sunt nihil bland', 'Cumque velit volupt', '2020-06-22 04:11:01', '2020-06-21 21:11:01', 'Publish'),
-(2, 'Node JS developer', 'Islamabad', 'Fulltime', 'Information Technology', 'Day Shift', '5', 'Associate', '3', 'test', 'test', 'test', '20000', '400000', '2020-06-28 23:45:26', '2020-06-28 16:45:26', 'Publish');
+(2, 'Node JS developer', 'Islamabad', 'Fulltime', 'Information Technology', 'Day Shift', '5', 'Associate', '3', 'test', 'test', 'test', '20000', '400000', '2020-06-28 23:45:26', '2020-06-28 16:45:26', 'Publish'),
+(3, 'Laravel Developer', 'Lahore', 'Fulltime', 'Developer', 'Day Shift', '5', 'Staff', 'No', 'Laravel Developer', 'To manage daily development needs', 'laravel\r\nvue\r\nhtml\r\ncss', '40000', '50000', '2020-07-13 12:54:58', '2020-07-13 17:54:58', 'Publish'),
+(4, 'Frontend Developer', 'Islamabad', 'Fulltime', 'Development', 'Night Shift', '35', 'Staff', '1 year as Junior Frontend Developer', 'As a Front End Developer, you will be responsible for implementing visual elements that are visible from the computer users vantage point within a web application. You will combine the art of design with the science of programming. You will be responsible for the translation of UI/UX design wireframes to actual code.', 'You will be responsible for the translation of UI/UX design wireframes to actual code.', 'Html\r\nCSS\r\nJavascript', '20000', '25000', '2020-07-14 14:15:45', '2020-07-14 19:15:45', 'Publish');
 
 -- --------------------------------------------------------
 
@@ -589,12 +607,12 @@ CREATE TABLE `leave_applications` (
   `last_leave_period` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
-  `leave_address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `last_leave_date` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `leave_address` text COLLATE utf8mb4_unicode_ci,
+  `last_leave_date` text COLLATE utf8mb4_unicode_ci,
   `reason` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `during_leave` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `publication_status` tinyint(4) NOT NULL DEFAULT 0,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `publication_status` tinyint(4) NOT NULL DEFAULT '0',
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -604,7 +622,7 @@ CREATE TABLE `leave_applications` (
 --
 
 INSERT INTO `leave_applications` (`id`, `created_by`, `leave_category_id`, `last_leave_category_id`, `last_leave_period`, `start_date`, `end_date`, `leave_address`, `last_leave_date`, `reason`, `during_leave`, `publication_status`, `deletion_status`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '1', 'ddfgfdg', '2019-09-16', '2019-09-23', 'fdgfdgfg', '2019-09-13', 'dfgdfgdfg', 'gdfgdfgd', 2, 0, '2019-09-24 11:24:12', '2020-07-08 04:16:46');
+(1, 1, 1, '1', 'ddfgfdg', '2019-09-16', '2019-09-23', 'fdgfdgfg', '2019-09-13', 'dfgdfgdfg', 'gdfgdfgd', 1, 0, '2019-09-24 11:24:12', '2020-07-12 17:27:13');
 
 -- --------------------------------------------------------
 
@@ -618,7 +636,7 @@ CREATE TABLE `leave_categories` (
   `leave_category` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `leave_category_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_status` tinyint(4) NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -628,9 +646,9 @@ CREATE TABLE `leave_categories` (
 --
 
 INSERT INTO `leave_categories` (`id`, `created_by`, `leave_category`, `leave_category_description`, `publication_status`, `deletion_status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Sick', 'grdgdg', 1, 0, '2019-08-31 11:50:01', '2019-09-24 10:28:23'),
-(2, 1, 'Anual', 'anual fuction', 1, 0, '2020-06-28 23:40:58', '2020-06-28 23:40:58'),
-(3, 1, 'Gavin Strickland', 'Obcaecati pariatur', 0, 0, '2020-07-08 04:00:23', '2020-07-08 04:00:23');
+(1, 1, 'Sick', 'Sick leave is time off given by the company to allow employees to recover from an illness and take care of their health. Sick leaves are crucial to allow employees to get the rest they need without worrying about losing pay. Sick leave is a mandatory requirement in many countries to ensure the wellbeing of the employee. ', 1, 0, '2019-08-31 11:50:01', '2019-09-24 10:28:23'),
+(2, 1, 'Annual', 'Annual leave is paid time off work granted by employers to employees to be used for whatever the employee wishes', 1, 0, '2020-06-28 23:40:58', '2020-06-28 23:40:58'),
+(3, 1, 'Maternity Leave', 'This leave will be permissible to:\r\n1)Those women having 6 month pregnancy (Leave duration:3 months)\r\n2)Those men whose spouse have 8 month pregnancy(Leave duration: 1 month)', 1, 0, '2020-07-08 04:00:23', '2020-07-12 17:26:52');
 
 -- --------------------------------------------------------
 
@@ -647,7 +665,7 @@ CREATE TABLE `loans` (
   `number_of_installments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remaining_installments` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `loan_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -658,9 +676,10 @@ CREATE TABLE `loans` (
 
 INSERT INTO `loans` (`id`, `created_by`, `user_id`, `loan_name`, `loan_amount`, `number_of_installments`, `remaining_installments`, `loan_description`, `deletion_status`, `created_at`, `updated_at`) VALUES
 (1, 1, 11, 'Install', '100', '5', '1', '<p>dfgdf<br></p>', 0, '2019-08-31 11:38:58', '2020-06-28 19:19:59'),
-(2, 1, 13, 'Md Mohosin Iqbal', '500', '4', '4', 'hfghfhfg', 0, '2019-09-01 00:12:40', '2019-09-24 11:06:15'),
+(2, 1, 13, 'Md Mohosin Iqbal', '500', '4', '3', 'hfghfhfg', 0, '2019-09-01 00:12:40', '2020-07-13 12:35:08'),
 (3, 1, 15, 'Channing Tyson', '25', '1000', '998', 'Ex voluptatum dicta', 0, '2020-06-28 19:19:18', '2020-06-28 23:28:35'),
-(4, 1, 13, 'for home rent', '20', '3', '3', 'test', 0, '2020-06-28 23:35:24', '2020-06-28 23:35:24');
+(4, 1, 13, 'for home rent', '20', '3', '2', 'test', 0, '2020-06-28 23:35:24', '2020-07-13 12:35:08'),
+(5, 1, 13, 'marraige loan', '100000', '12', '12', 'marraige grant loan', 0, '2020-07-13 12:39:17', '2020-07-13 12:39:17');
 
 -- --------------------------------------------------------
 
@@ -717,7 +736,7 @@ CREATE TABLE `notices` (
   `notice_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `publication_status` tinyint(4) NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -727,9 +746,9 @@ CREATE TABLE `notices` (
 --
 
 INSERT INTO `notices` (`id`, `created_by`, `notice_title`, `description`, `publication_status`, `deletion_status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Office Party', 'Office Holidays for Ashora Office Holidays for Ashora Office Holidays for Ashora Office Holidays for Ashora', 1, 0, '2018-04-16 05:59:04', '2018-04-16 05:59:04'),
-(2, 1, 'Office Holidays', 'Office Holidays for Ashora Office Holidays for Ashora Office Holidays for Ashora Office Holidays for Ashora', 1, 0, '2019-08-31 23:28:44', '2019-08-31 23:28:44'),
-(3, 1, 'title1', 'something text for title1', 1, 0, '2020-06-28 23:42:55', '2020-06-28 23:42:55');
+(4, 1, 'corona virus precaution', 'sanitize your hands\r\nkeep safe distance', 0, 0, '2020-07-13 12:50:46', '2020-07-14 14:01:18'),
+(5, 1, 'Eid Holidays', 'Eid holidays will be observed from 29 july to 4 august . Happy Eid', 1, 0, '2020-07-14 13:13:51', '2020-07-14 13:13:51'),
+(6, 1, 'eid bonus', 'eid bonus of rs 2000 for all employees', 1, 0, '2020-07-16 16:50:32', '2020-07-16 16:50:32');
 
 -- --------------------------------------------------------
 
@@ -763,7 +782,7 @@ CREATE TABLE `payrolls` (
   `tax_deduction` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `provident_fund_deduction` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `other_deduction` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `activation_status` tinyint(4) NOT NULL DEFAULT 0,
+  `activation_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -776,7 +795,7 @@ INSERT INTO `payrolls` (`id`, `created_by`, `user_id`, `employee_type`, `basic_s
 (1, 1, 11, 3, '8080', '44', '444', '44', '44', '444', '2', '4', '50', 0, '2019-08-31 11:29:21', '2019-09-04 11:01:14'),
 (2, 1, 6, 3, '55000', '210', '254', '200', '300', '580', '250', '500', '200', 0, '2019-09-01 00:11:01', '2019-09-01 00:11:01'),
 (3, 1, 4, 2, '15000', '5000', NULL, NULL, '1000', '500', '2500', NULL, NULL, 0, '2019-09-01 23:28:10', '2019-09-01 23:28:10'),
-(4, 1, 13, 3, '5220', '55', '876', '567', '543', '456', '56', '654', '56', 0, '2019-09-25 02:03:44', '2020-06-28 23:23:35'),
+(4, 1, 13, 3, '27000', '5500', '8760', '5670', '5430', '4560', '567', '6547', '565', 0, '2019-09-25 02:03:44', '2020-07-13 12:34:31'),
 (5, 1, 15, 3, '2040', NULL, NULL, NULL, '50', NULL, NULL, '20', NULL, 0, '2020-06-28 19:15:18', '2020-06-28 23:24:19');
 
 -- --------------------------------------------------------
@@ -894,7 +913,7 @@ CREATE TABLE `personal_events` (
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `publication_status` tinyint(4) NOT NULL,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -952,7 +971,8 @@ INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
 (15, 2),
 (16, 2),
 (17, 2),
-(20, 1);
+(20, 1),
+(23, 2);
 
 -- --------------------------------------------------------
 
@@ -971,7 +991,7 @@ CREATE TABLE `salary_payments` (
   `payment_amount` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `payment_month` date NOT NULL,
   `payment_type` tinyint(4) NOT NULL COMMENT '1 for cash payment, 2 for chaque payment & 3 for bank payment',
-  `note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `note` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -995,7 +1015,8 @@ INSERT INTO `salary_payments` (`id`, `created_by`, `user_id`, `gross_salary`, `t
 (13, 1, 15, '20.00', '0.00', '20', '0', '20', '2020-06-01', 1, NULL, '2020-06-28 19:18:28', '2020-06-28 19:18:28'),
 (14, 1, 11, '9056.00', '76.00', '8980', '48', '8980', '2020-06-01', 1, NULL, '2020-06-28 19:19:59', '2020-06-28 19:19:59'),
 (15, 1, 15, '2040.00', '93.03', '1946.97', '70', '1946.97', '2020-07-01', 1, NULL, '2020-06-28 23:27:30', '2020-06-28 23:27:30'),
-(16, 1, 15, '2040.00', '20.03', '2019.97', '70', '2019.97', '2020-11-01', 3, NULL, '2020-06-28 23:28:35', '2020-06-28 23:28:35');
+(16, 1, 15, '2040.00', '20.03', '2019.97', '70', '2019.97', '2020-11-01', 3, NULL, '2020-06-28 23:28:35', '2020-06-28 23:28:35'),
+(17, 1, 13, '51490.00', '7810.67', '43679.33', '11977', '43679.33', '2020-07-01', 1, NULL, '2020-07-13 12:35:08', '2020-07-13 12:35:08');
 
 -- --------------------------------------------------------
 
@@ -1141,7 +1162,18 @@ INSERT INTO `salary_payment_details` (`id`, `salary_payment_id`, `item_name`, `a
 (121, 16, 'Basic Salary', 2040, 'credits', '2020-06-28 23:28:35', '2020-06-28 23:28:35'),
 (122, 16, 'Provident Fund Contribution', 50, 'credits', '2020-06-28 23:28:35', '2020-06-28 23:28:35'),
 (123, 16, 'Provident Fund Deduction', 20, 'debits', '2020-06-28 23:28:35', '2020-06-28 23:28:35'),
-(124, 16, 'Channing Tyson', 0, 'debits', '2020-06-28 23:28:35', '2020-06-28 23:28:35');
+(124, 16, 'Channing Tyson', 0, 'debits', '2020-06-28 23:28:35', '2020-06-28 23:28:35'),
+(125, 17, 'Basic Salary', 27000, 'credits', '2020-07-13 12:35:08', '2020-07-13 12:35:08'),
+(126, 17, 'House Rent Allowance', 5500, 'credits', '2020-07-13 12:35:08', '2020-07-13 12:35:08'),
+(127, 17, 'Medical Allowance', 8760, 'credits', '2020-07-13 12:35:08', '2020-07-13 12:35:08'),
+(128, 17, 'Special Allowance', 5670, 'credits', '2020-07-13 12:35:08', '2020-07-13 12:35:08'),
+(129, 17, 'Provident Fund Contribution', 5430, 'credits', '2020-07-13 12:35:08', '2020-07-13 12:35:08'),
+(130, 17, 'Other Allowance', 4560, 'credits', '2020-07-13 12:35:08', '2020-07-13 12:35:08'),
+(131, 17, 'Tax Deduction', 567, 'debits', '2020-07-13 12:35:08', '2020-07-13 12:35:08'),
+(132, 17, 'Provident Fund Deduction', 6547, 'debits', '2020-07-13 12:35:08', '2020-07-13 12:35:08'),
+(133, 17, 'Other Deduction', 565, 'debits', '2020-07-13 12:35:08', '2020-07-13 12:35:08'),
+(134, 17, 'Md Mohosin Iqbal', 125, 'debits', '2020-07-13 12:35:08', '2020-07-13 12:35:08'),
+(135, 17, 'for home rent', 7, 'debits', '2020-07-13 12:35:08', '2020-07-13 12:35:08');
 
 -- --------------------------------------------------------
 
@@ -1163,7 +1195,7 @@ CREATE TABLE `set_times` (
 --
 
 INSERT INTO `set_times` (`id`, `created_by`, `in_time`, `out_time`, `created_at`, `updated_at`) VALUES
-(1, 1, '11:12:00', '18:05:00', '2019-09-07 06:49:45', '2019-09-07 07:49:57');
+(1, 1, '09:00:00', '17:00:00', '2019-09-07 06:49:45', '2020-07-13 12:43:55');
 
 -- --------------------------------------------------------
 
@@ -1175,10 +1207,10 @@ CREATE TABLE `tasks` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `task_end_date` varchar(200) DEFAULT NULL,
-  `task_detail` text DEFAULT NULL,
+  `task_detail` text,
   `task_status` varchar(100) DEFAULT NULL,
   `task_count` varchar(100) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1189,7 +1221,9 @@ CREATE TABLE `tasks` (
 INSERT INTO `tasks` (`id`, `user_id`, `task_end_date`, `task_detail`, `task_status`, `task_count`, `created_at`, `updated_at`) VALUES
 (1, 13, NULL, 'Magnam reprehenderit', 'Completed', '1', '2020-06-24 20:10:53', '2020-06-24 13:10:53'),
 (2, 13, NULL, 'hello do work on task management', 'Pending', '0', '2020-06-28 23:54:15', '2020-06-28 16:54:15'),
-(3, 16, NULL, 'test', 'Completed', '1', '2020-07-08 04:08:55', '2020-07-07 21:08:55');
+(3, 16, NULL, 'test', 'Completed', '1', '2020-07-08 04:08:55', '2020-07-07 21:08:55'),
+(4, 20, NULL, 'bvvvvv', 'Pending', NULL, '2020-07-12 18:04:56', '2020-07-12 23:04:56'),
+(5, 13, NULL, 'backend work on hrms project', 'Pending', NULL, '2020-07-13 13:16:20', '2020-07-13 18:16:20');
 
 -- --------------------------------------------------------
 
@@ -1210,11 +1244,11 @@ CREATE TABLE `users` (
   `present_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `permanent_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `home_district` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `academic_qualification` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `professional_qualification` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `academic_qualification` text COLLATE utf8mb4_unicode_ci,
+  `professional_qualification` text COLLATE utf8mb4_unicode_ci,
   `joining_date` date DEFAULT NULL,
-  `experience` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `reference` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `experience` text COLLATE utf8mb4_unicode_ci,
+  `reference` text COLLATE utf8mb4_unicode_ci,
   `id_name` tinyint(4) DEFAULT NULL COMMENT '1 for NID, 2 Passport, 3 for Driving License',
   `id_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `contact_no_one` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1230,8 +1264,8 @@ CREATE TABLE `users` (
   `joining_position` int(11) DEFAULT NULL,
   `access_label` tinyint(4) NOT NULL COMMENT '1 for superadmin, 2 for associates, 3 for employees, 4 for references and 5 for clients',
   `role` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `activation_status` tinyint(4) NOT NULL DEFAULT 0,
-  `deletion_status` tinyint(4) NOT NULL DEFAULT 0,
+  `activation_status` tinyint(4) NOT NULL DEFAULT '0',
+  `deletion_status` tinyint(4) NOT NULL DEFAULT '0',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -1242,11 +1276,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `created_by`, `employee_id`, `name`, `father_name`, `mother_name`, `spouse_name`, `email`, `password`, `present_address`, `permanent_address`, `home_district`, `academic_qualification`, `professional_qualification`, `joining_date`, `experience`, `reference`, `id_name`, `id_number`, `contact_no_one`, `contact_no_two`, `emergency_contact`, `web`, `gender`, `date_of_birth`, `marital_status`, `avatar`, `client_type_id`, `designation_id`, `joining_position`, `access_label`, `role`, `activation_status`, `deletion_status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 1, NULL, 'Super Admin user', NULL, NULL, NULL, 'admin@admin.com', '$2y$10$w93wheuYN9zvhZlI9Ul0WOoBqcfaCknDNyOk4rNzZhAnrA5M1QNJO', 'Islamabad', 'test', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '03001234567', NULL, NULL, NULL, 'm', '2020-06-28', NULL, '1590772869.jpg', 9, 8, NULL, 1, '1', 1, 0, 'vJJUQRuPZ0sDG2TndLnwvcykiIVm6WOHkHVBrpZ0nNbGKkaPo0wR8K7s86oU', '2019-09-07 06:25:15', '2020-06-28 23:53:32'),
+(1, 1, NULL, 'Super Admin user', NULL, NULL, NULL, 'admin@admin.com', '$2y$10$OmtABDs4QZBLns9YMjxzdOgPCTxzQ.Ivv4lhV5KN.6N7DkFvrg6o2', 'Islamabad', 'test', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '03001234567', NULL, NULL, NULL, 'm', '2020-07-13', NULL, '1594642900.png', 9, 8, NULL, 1, '1', 1, 0, 'jT6a2vzSfFAx2sEWJZ1XUbuFKRH2jVIUh5mAF0b9kFsEpIzzSfhz2f2h2bf7', '2019-09-07 06:25:15', '2020-07-13 13:23:22'),
 (8, 1, NULL, 'Dr. Wasi', NULL, NULL, NULL, 'emaggio@example.org', '$2y$10$Y17jCoozWQAi0i5jDK65D.JSAyd0JbvznZ4vp3lnZC3Ck6CIVLGBu', '86384 Helga LakesCormierton, GA 99066', '6460 Kieran Place Suite 387\nLake Einar, UT 11733-9184', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1-624-402-9842', NULL, NULL, 'http://pfannerstill.com/', 'm', '2020-06-13', NULL, NULL, 3, 1, NULL, 4, NULL, 1, 0, 'uetBpPUya9', '2018-04-12 06:25:15', '2020-06-14 00:21:39'),
 (11, 1, 11, 'Wali', 'gfdfg', 'fggfdgfd', 'gfdgdgd', 'wali@gmail.com', '$2y$10$w93wheuYN9zvhZlI9Ul0WOoBqcfaCknDNyOk4rNzZhAnrA5M1QNJO', 'dfgdfg', 'fdgfdgdf', 'dfgdfgd', 'gujg', 'gjhjghjghj', '2018-08-29', 'jghjghjg', 'jghjghj', 1, '223214414', '6546454', NULL, '455', NULL, 'm', '2019-08-31', 1, NULL, NULL, 12, 6, 2, '1', 0, 0, 'tPBMNlNYmrQn4L9gl5f5V2fN5DGWIBLMMq0XxZQZ3w05reZbOrietXRqT9Cy', '2019-08-31 11:28:18', '2019-09-18 02:38:18'),
 (12, 1, NULL, 'Md Mohosin Iqbal', NULL, NULL, NULL, 'mohosin.iqbal@gmail.com', '$2y$10$gzyjCI1Hn0f1ZqPIuxleS.43GZcVW3sar8bdmumg.GTGSJU4fp1K.', '225/1 New Elephant Road', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '123', NULL, NULL, '', 'm', '2020-06-13', NULL, NULL, 11, NULL, NULL, 5, NULL, 0, 0, NULL, '2019-09-01 00:58:00', '2020-06-14 00:21:09'),
-(13, 1, 12, 'End User', 'Mojibur Rahman', 'Baharun Nesa', 'Farzana Papia', 'test@test.com', '$2y$10$w93wheuYN9zvhZlI9Ul0WOoBqcfaCknDNyOk4rNzZhAnrA5M1QNJO', 'Islamabad', 'Islamabad', 'None', 'hgjggj', 'jhgjhjg', '2018-08-01', 'ghjghjh', 'Dr. Wasi', 1, '3213423534543645645', '01921588567', NULL, '01921588567', NULL, 'm', '2020-05-29', 1, '1590773199.png', NULL, 12, 6, 2, '2', 0, 0, 'mZFBNEZFYV9Vt8axGn8j2N0tKwSyJJJBqiXMR88YCJc5iYdL3q8CQwOxuv3Z', '2019-09-07 02:16:25', '2020-05-30 06:26:39'),
+(13, 1, 12, 'Aslam Khan', 'Mojibur Rahman', 'Baharun Nesa', 'Farzana Papia', 'test@test.com', '$2y$10$w93wheuYN9zvhZlI9Ul0WOoBqcfaCknDNyOk4rNzZhAnrA5M1QNJO', 'Islamabad', 'Islamabad', 'None', 'hgjggj', 'jhgjhjg', '2018-08-01', 'ghjghjh', 'Dr. Wasi', 1, '3213423534543645645', '01921588567', NULL, '01921588567', NULL, 'm', '2020-07-14', 1, '1594746678.jpeg', NULL, 12, 6, 2, '2', 0, 0, '2oTEWYjcbJvege4LOsqaxm0R8m4WgJZ7pmyYs5X9FtQczD3VuhDPoyGcJHj0', '2019-09-07 02:16:25', '2020-07-14 18:11:18'),
 (14, 1, 13, 'Maria', 'Ahmad', 'test', 'test', 'test@test2.com', '$2y$10$YoJWhb15v1XyW5KF.2msCemoAfJREuNAyQKH93l1m6RIibG1zDYAG', 'Rawalpindi', 'Rawalpindi', 'None', NULL, NULL, NULL, NULL, NULL, 1, 'test', '03001234567', NULL, '0300', NULL, 'f', '2020-05-30', 2, NULL, NULL, 7, 2, 2, 'superadmin', 0, 0, NULL, '2020-05-31 01:09:05', '2020-05-31 01:09:05'),
 (15, 1, 14, 'New test1', 'Iola Nichols', 'Sharon Bowman', 'Tate Knowles', 'gumibak@mailinator.com', '$2y$10$tP7IKzsZdDm3buEEMQkXMeCXaR4EFIeBiIEiFXTYEMLdhPnRUaZKq', 'Suscipit nihil nemo', 'Culpa aut vel tenet', 'None', 'Quae ullam voluptate', 'Vel possimus sint', NULL, 'Enim minim est aperi', 'Dr. Wasi', 1, '590', 'Eveniet et labore t', NULL, 'Quo consequatur Eli', NULL, 'm', '2020-06-27', 2, NULL, NULL, 9, 7, 2, 'employee', 0, 0, NULL, '2020-06-28 19:14:31', '2020-06-28 19:14:31'),
 (16, 1, 15, 'MR Ali', 'Desiree Gilbert', 'Christopher Small', 'Felix Charles', 'levenet@mailinator.com', '$2y$10$EqwEKnqTYAcT4bSBSa7BgePjV7anv0nhdMtPS5.Kpuxqw3.VbJkD2', 'Est consectetur mai', 'Quia dicta voluptate', 'None', 'In eu occaecat magni', 'Ad maxime elit cons', NULL, 'Cum voluptatem aute', 'Dr. Wasi', 2, '588', 'Quod enim doloremque', NULL, 'Ut labore nisi dolor', NULL, 'm', '2020-06-28', 4, NULL, NULL, 2, 6, 2, '2', 0, 0, NULL, '2020-06-28 23:12:05', '2020-06-28 23:12:57'),
@@ -1255,7 +1289,10 @@ INSERT INTO `users` (`id`, `created_by`, `employee_id`, `name`, `father_name`, `
 (19, 1, NULL, 'Colleen Nicholson', NULL, NULL, NULL, 'haqykyci@mailinator.com', '$2y$10$yrl0xdJiWK0RMVzyMPd1purJNnzUkBVX2Xb2v/3OLwPrLeJRiMOly', 'Cumque laboriosam e', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '412412', '23234', NULL, NULL, 'm', '2020-07-20', NULL, NULL, 6, NULL, NULL, 5, NULL, 0, 0, NULL, '2020-07-08 03:59:39', '2020-07-08 03:59:39'),
 (20, 1, 19, 'MR Adeel', 'Khan', NULL, 'Velma Ashley', 'nikegoto@mailinator.com', '$2y$10$Zs.SyAEDjcr6bCdOJqvhw.kaY5u88v.3HM9KEWC2fEIbcIIkG6FXS', 'islamabad', 'islamabad', 'None', 'Quasi eligendi in sa', 'Quo ad ab nobis irur', '2020-07-15', 'Molestias et eveniet', 'Cecilia Taylor', 2, '129', 'Dignissimos qui plac', NULL, 'Velit quae alias vi', NULL, 'm', '2020-07-15', 2, NULL, NULL, 12, 6, 2, 'superadmin', 0, 0, NULL, '2020-07-09 03:05:24', '2020-07-09 03:05:24'),
 (21, 1, NULL, 'Gary Thompson', NULL, NULL, NULL, 'qulo@mailinator.com', '$2y$10$Y4RA8CHnRt8HRZ8kqogbX.JdmoQ0PTA4oaD1XXECJvboGifcmFvR6', 'Odio unde nulla eius', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '23423423', '2324', NULL, NULL, 'm', '2020-07-23', NULL, NULL, 11, NULL, NULL, 5, NULL, 0, 0, NULL, '2020-07-09 03:06:26', '2020-07-09 03:06:26'),
-(22, 1, NULL, 'Jenette Giles', NULL, NULL, NULL, 'zazemapuf@mailinator.com', '$2y$10$b7gWEQcHWxpQkhlTeDShQ./4eDEMZKJj.HrOyuBadE8UDzOMQ4NLG', 'Molestiae atque ut s', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '234234', '2423', NULL, NULL, 'f', '2020-07-13', NULL, NULL, NULL, NULL, NULL, 4, NULL, 0, 0, NULL, '2020-07-09 03:06:49', '2020-07-09 03:06:49');
+(22, 1, NULL, 'Jenette Giles', NULL, NULL, NULL, 'zazemapuf@mailinator.com', '$2y$10$b7gWEQcHWxpQkhlTeDShQ./4eDEMZKJj.HrOyuBadE8UDzOMQ4NLG', 'Molestiae atque ut s', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '234234', '2423', NULL, NULL, 'f', '2020-07-13', NULL, NULL, NULL, NULL, NULL, 4, NULL, 0, 0, NULL, '2020-07-09 03:06:49', '2020-07-09 03:06:49'),
+(23, 1, 22, 'Waseem', 'Abdul Haq', 'Yasmeen', NULL, 'waseem@was.com', '$2y$10$GgKv401WqA/reC3312HRgevuLh4jZyZjOYDKxzSEO9zVReL7AoSK6', 'G7-islamabad', 'village khamki', 'None', 'BS-IT', '3 year DB Aministrator at PTCL', '2020-07-08', '3', 'Dr. Wasi', 1, '37406-3471776-9', '03439087654', NULL, NULL, NULL, 'm', '1991-03-07', 2, NULL, NULL, 7, 7, 2, 'employee', 0, 0, NULL, '2020-07-13 12:26:01', '2020-07-13 12:26:01'),
+(24, 1, NULL, 'Aashir', NULL, NULL, NULL, 'ashir78@gmail.com', '$2y$10$2tI/vhzX0l71oHukqZrkWORmYP4ZzpFXCrBJY09pvmjtFBJC0mpQG', 'Wah Cantt', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '8787654', NULL, NULL, NULL, 'm', '2020-07-13', NULL, NULL, 6, NULL, NULL, 5, NULL, 0, 0, NULL, '2020-07-13 12:29:38', '2020-07-13 12:29:38'),
+(25, 1, NULL, 'Khan Alam', NULL, NULL, NULL, 'alamkhan@yaho.com', '$2y$10$LkfHL3hBOLUOmBcEenOHx.tBcZutIEiKKgrTkHdbI7vW5.0EZqMWa', 'b16-b67 south islamabad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '78787654', NULL, NULL, NULL, 'm', '1990-02-06', NULL, NULL, NULL, NULL, NULL, 4, NULL, 0, 0, NULL, '2020-07-13 12:31:44', '2020-07-13 12:32:12');
 
 -- --------------------------------------------------------
 
@@ -1516,13 +1553,13 @@ ALTER TABLE `working_days`
 -- AUTO_INCREMENT for table `appliedcadidtes`
 --
 ALTER TABLE `appliedcadidtes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `attendances`
 --
 ALTER TABLE `attendances`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `award_categories`
@@ -1534,25 +1571,25 @@ ALTER TABLE `award_categories`
 -- AUTO_INCREMENT for table `bonuses`
 --
 ALTER TABLE `bonuses`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `client_types`
 --
 ALTER TABLE `client_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `deductions`
 --
 ALTER TABLE `deductions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `designations`
@@ -1606,13 +1643,13 @@ ALTER TABLE `holidays`
 -- AUTO_INCREMENT for table `increments`
 --
 ALTER TABLE `increments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `leave_applications`
@@ -1630,7 +1667,7 @@ ALTER TABLE `leave_categories`
 -- AUTO_INCREMENT for table `loans`
 --
 ALTER TABLE `loans`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1642,7 +1679,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `notices`
 --
 ALTER TABLE `notices`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `payrolls`
@@ -1672,13 +1709,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `salary_payments`
 --
 ALTER TABLE `salary_payments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `salary_payment_details`
 --
 ALTER TABLE `salary_payment_details`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT for table `set_times`
@@ -1690,13 +1727,13 @@ ALTER TABLE `set_times`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `working_days`

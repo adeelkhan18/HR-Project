@@ -61,8 +61,15 @@
                 </div>
                 <?php endif; ?>
             </div>
+            <div  class="col-md-3">
+                <button type="button" class="tip btn btn-primary btn-flat" title="Print" data-original-title="Label Printer" onclick="printDiv('printable_area')">
+                    <i class="fa fa-print"></i>
+                    <span class="hidden-sm hidden-xs"> <?php echo __('Print'); ?></span>
+                </button>
+            </div>
             <!-- /.Notification Box -->
             <div class="col-md-12 table-responsive">
+                 <div id="printable_area" class="col-md-12 table-responsive">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -123,6 +130,7 @@
                     <tfoot>
                     </tfoot>
                 </table>
+            </div>
             </div>
         </div>
         <!-- /.box-body -->

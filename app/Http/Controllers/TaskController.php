@@ -116,6 +116,35 @@ class TaskController extends Controller {
     	return view('administrator.hrm.attendance.detailsAttendense', compact('attendance'));
     }
 
+	public function performance() {
+		$taskdat = Task::join('users', 'users.id', '=', 'tasks.user_id')
+		->select( 'users.name', 'tasks.id', 'tasks.user_id','tasks.created_at', 'tasks.task_detail', 'tasks.task_status')
+		->groupBy('users.name')
+		->get();
+		//dd($taskdat);
+		foreach($taskdat as $data){
+			$query = DB::table('tasks')
+			  ->where('tasks.user_id', $data->user_id);
+			  $total_task = $query->count();
+			  $completed_task =$query->where('task_status', 'Completed')->count();
+			  $pending_task =$total_task-$completed_task;
+			  
+			  
+
+			$Task[] = array(
+                    'total_task'=> $total_task,
+					'completed_task'=> $completed_task,
+					'name'=> $data->name,
+					'pending_task'=> $pending_task,
+					
+
+					
+            );
+
+		}
+		//dd($Task);
+		return view('administrator.task.performance', compact('Task'));
+	}
 
 
     public function attDetailsReportGo(){

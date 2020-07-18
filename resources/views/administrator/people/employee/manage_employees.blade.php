@@ -81,8 +81,9 @@
                             <td>{{ $employee['contact_no_one'] }}</td>
                             <td class="text-center">{{ date("d F Y", strtotime($employee['created_at'])) }}</td>
                            
-                            <td class="text-center">
+                             <td class="text-center">
                                <a href="{{ url('/people/employees/edit/' . $employee['id']) }}"><i class="icon fa fa-edit"></i> {{ __('Edit') }}</a>
+                               <a href="{{ url('/people/employees/delete/' . $employee['id']) }}"><i class="icon fa fa-trash"></i> {{ __('delete') }}</a>
                             </td>
                         </tr>
                         @endforeach

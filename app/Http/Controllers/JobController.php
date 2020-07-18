@@ -98,6 +98,7 @@ centangle-hr@gmail.com for futher information
 			  return back()->with('message','Successfully Updated');
 	}
 
+
 	public function CanditeNotApproved($id) {
 
 		$affected = DB::table('appliedcadidtes')
@@ -197,6 +198,13 @@ centangle-hr@gmail.com for futher information
 	   }
 	  
 		
+	}
+	public function deleteJob($id) {
+
+		$jobs = Job::whereId($id)->delete();
+		$child = DB::table('appliedcadidtes')->where('jobid',$id)->delete();
+
+		return back()->with('message','Successfully deleted');
 	}
 
 	
